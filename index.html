@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cemre Dağ - Machine Learning Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            color: #a0aec0;
+        }
+
+        .contact-item strong {
+            color: white;
+        }
+
+        .section {
+            padding: 3rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #1a202c;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #2d3748;
+        }
+
+        .summary {
+            font-size: 1rem;
+            color: #4a5568;
+            max-width: 900px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .summary strong {
+            color: #2d3748;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #4a5568;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .skill-list strong {
+            color: #2d3748;
+        }
+
+        .experience-grid, .projects-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-item, .project-item {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 2rem;
+            border-left: 4px solid #2d3748;
+        }
+
+        .experience-item h3, .project-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+
+        .position-info {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .description {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .achievements {
+            margin: 1rem 0;
+        }
+
+        .achievements h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-list {
+            list-style: none;
+            color: #4a5568;
+        }
+
+        .achievement-list li {
+            margin-bottom: 0.3rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .achievement-list li::before {
+            content: '•';
+            color: #2d3748;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .tech-stack {
+            margin-top: 1rem;
+        }
+
+        .tech-stack strong {
+            color: #2d3748;
+            font-size: 0.9rem;
+        }
+
+        .tech-stack span {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .metric-item .value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-item .label {
+            font-size: 0.75rem;
+            color: #718096;
+        }
+
+        .education-item {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .education-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #a0aec0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .section {
+                padding: 2rem 1rem;
+            }
+            
+            .key-metrics {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">Cemre Dağ</h1>
+            <p class="title">Machine Learning Engineer | Healthcare AI Specialist | Computer Vision Expert</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> cemred.istanbul@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> +905345891602
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> Istanbul, Turkey
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <div class="summary">
+                Results-driven <strong>Machine Learning Engineer</strong> with <strong>4+ years</strong> of experience designing and implementing end-to-end ML pipelines for healthcare AI, computer vision, and enterprise data systems. Proven track record of delivering production-ready models with measurable business impact, including <strong>95.83% segmentation accuracy</strong> in medical imaging and <strong>65% operational efficiency improvements</strong> in financial document processing.
+            </div>
+            <div class="summary">
+                <strong>Core Specializations:</strong> Deep Learning Architecture Design, Computer Vision Systems, NLP/RAG Implementation, Medical AI Development, MLOps Pipeline Engineering<br>
+                <strong>Industry Focus:</strong> Healthcare AI, Financial Technology, Sustainability Solutions
+            </div>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">95.83%</div>
+                    <div class="metric-label">Medical Imaging Accuracy</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Top 5%</div>
+                    <div class="metric-label">International Competition</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">65%</div>
+                    <div class="metric-label">Efficiency Improvement</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4+ Years</div>
+                    <div class="metric-label">ML Engineering Experience</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Machine Learning & Deep Learning</h3>
+                    <div class="skill-list">
+                        <strong>Frameworks:</strong> TensorFlow, PyTorch, Keras, scikit-learn, XGBoost, LightGBM<br>
+                        <strong>Computer Vision:</strong> OpenCV, U-Net, ResNet architectures, CNN design, Real-time processing<br>
+                        <strong>Deep Learning:</strong> Custom architecture design, Transfer learning, Model optimization<br>
+                        <strong>Medical AI:</strong> Medical imaging analysis, Clinical decision support systems, Diagnostic AI
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>NLP & Language Models</h3>
+                    <div class="skill-list">
+                        <strong>NLP Technologies:</strong> Transformer models, BERT, Custom tokenization<br>
+                        <strong>RAG Systems:</strong> Vector databases, Embedding generation, Context-aware retrieval<br>
+                        <strong>Document Processing:</strong> Multi-format parsing (PDF, Word, tables), Text extraction pipelines
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Engineering & MLOps</h3>
+                    <div class="skill-list">
+                        <strong>Programming:</strong> Python, SQL, Java, JavaScript, C#<br>
+                        <strong>Data Processing:</strong> Pandas, NumPy, Data preprocessing pipelines, Feature engineering<br>
+                        <strong>Databases:</strong> MySQL, SQL Server, SQLite, Vector databases, NoSQL<br>
+                        <strong>Cloud & Infrastructure:</strong> GCP, Azure, BigQuery, REST API development
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Visualization & Analysis</h3>
+                    <div class="skill-list">
+                        <strong>Tools:</strong> Matplotlib, Seaborn, Tableau, Interactive dashboards<br>
+                        <strong>Statistical Analysis:</strong> Time series forecasting, Predictive modeling, A/B testing<br>
+                        <strong>Version Control:</strong> Git, GitHub, CI/CD pipeline implementation
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Data Analyst | Superint Software</h3>
+                    <div class="position-info">January 2025 - April 2025</div>
+                    <div class="description">
+                        Led AI module development for "Food Detective" mobile application, focusing on computer vision implementation and data pipeline optimization.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul class="achievement-list">
+                            <li>Implemented TF-IDF optimization reducing query response time by 40%</li>
+                            <li>Achieved 99.7% accuracy in text-based food journaling through advanced NLP techniques</li>
+                            <li>Developed SQLite optimization strategies resulting in 60% storage reduction</li>
+                            <li>Increased user retention by 28% through data-driven insight analytics</li>
+                            <li>Deployed scalable cloud infrastructure supporting 1,000+ daily active users</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <strong>Technologies:</strong> <span>Python, TensorFlow, Computer Vision, SQLite, Gemini API, Cloud Infrastructure</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>AI & NLP Intern | ÜNLÜ & Co</h3>
+                    <div class="position-info">January 2025 - February 2025</div>
+                    <div class="description">
+                        Built enterprise-grade RAG system for financial document analysis with focus on security and scalability.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul class="achievement-list">
+                            <li>Developed secure local RAG architecture processing 1,700+ internal documents</li>
+                            <li>Implemented multi-format document parsing (PDF, Word, tables, visual content)</li>
+                            <li>Achieved 70% accuracy in financial document Q&A tasks</li>
+                            <li>Reduced research time by 65% through automated document analysis</li>
+                            <li>Designed scalable architecture supporting 500-1,000 employee deployment</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <strong>Technologies:</strong> <span>Python, Transformer models, Vector databases, RAG architecture, Financial document processing</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>SQL Development Intern | FLO Group</h3>
+                    <div class="position-info">July 2024 - August 2024</div>
+                    <div class="description">
+                        Optimized database performance and reporting systems for large-scale retail operations.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul class="achievement-list">
+                            <li>Optimized complex MSSQL queries across databases containing millions of transactional rows</li>
+                            <li>Achieved approximately 30% reduction in query execution time</li>
+                            <li>Enhanced reporting flows improving business team data access efficiency</li>
+                            <li>Implemented database optimization strategies for high-volume retail analytics</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <strong>Technologies:</strong> <span>MSSQL, Database optimization, Query performance tuning, Business intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>SifAI - Medical AI Diagnostic Platform</h3>
+                    <div class="position-info">February 2025 - June 2025 | Graduation Thesis Project</div>
+                    <div class="description">
+                        Comprehensive medical AI platform combining brain tumor classification and skin cancer detection for clinical decision support.
+                    </div>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="value">95.83%</div>
+                            <div class="label">Segmentation Accuracy</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="value">93%</div>
+                            <div class="label">Brain Tumor Classification</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="value">89.55%</div>
+                            <div class="label">Cancer Detection</div>
+                        </div>
+                        <div class="metric-item">
