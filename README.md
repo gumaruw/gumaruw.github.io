@@ -1,7 +1,6 @@
 # Personal Portfolio
 
-Personal portfolio showcasing my work.  
-**Live Site:** [gumaruw](https://gumaruw.github.io)
+[Personal portfolio](https://gumaruw.github.io) showcasing my work.  
 
 ## Contact
 
