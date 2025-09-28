@@ -1,0 +1,38 @@
+title: "Cemre Dag | ML Engineer & Computer Vision Specialist"
+description: "A solution-oriented engineer specializing in machine learning, signal processing, and image processing. Passionate about delivering tangible value through innovative AI solutions."
+author: "Cemre Dag"
+email: "cemred.istanbul@gmail.com"
+url: "https://gumaruw.github.io"
+baseurl: ""
+
+# Social links
+linkedin_url: "https://linkedin.com/in/cemred"
+kaggle_url: "https://kaggle.com/gumaruw"
+github_url: "https://github.com/gumaruw"
+
+# GitHub Pages settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+lang: en_US
+locale: en_US
+timezone: Europe/Istanbul
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+incremental: false
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
