@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cemre Dag - Machine Learning Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Cemre Dag | ML Engineer & Computer Vision Specialist</title>
+    <meta name="description" content="A solution-oriented engineer specializing in machine learning, signal processing, and image processing. Passionate about delivering tangible value through innovative AI solutions.">
+    <meta name="keywords" content="Machine Learning, Computer Vision, Signal Processing, AI, Deep Learning, Python, TensorFlow, OpenCV">
+    <meta name="author" content="Cemre Dag">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Cemre Dag | ML Engineer & Computer Vision Specialist">
+    <meta property="og:description" content="A solution-oriented engineer specializing in machine learning, signal processing, and image processing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gumaruw.github.io">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cemre Dag | ML Engineer & Computer Vision Specialist">
+    <meta name="twitter:description" content="A solution-oriented engineer specializing in machine learning, signal processing, and image processing.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-muted: #9ca3af;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #f1f5f9;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-        }
-
-        [data-theme="dark"] {
-            --primary-color: #3b82f6;
-            --secondary-color: #2563eb;
-            --accent-color: #60a5fa;
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-            --text-muted: #9ca3af;
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-            --bg-tertiary: #374151;
-            --border-color: #374151;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3);
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --light-bg: #fafbfc;
+            --dark-bg: #0f1419;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-bg-dark: rgba(31, 41, 55, 0.95);
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-color: rgba(226, 232, 240, 0.6);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --border-radius-small: 12px;
         }
 
         * {
@@ -47,429 +49,514 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: var(--bg-primary);
-            transition: all 0.3s ease;
-        }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--bg-primary);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 1.2rem;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--bg-tertiary);
-            color: var(--primary-color);
+            background: var(--light-bg);
+            overflow-x: hidden;
         }
 
         /* Hero Section */
         .hero {
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-gradient);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(45deg, #fff, #f0f8ff, #e6f3ff);
+            background-size: 200% 200%;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.8;
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.7;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-cta {
+        .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-flex;
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
+            justify-content: center;
             color: white;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
         }
 
-        .btn-primary:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-secondary {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-secondary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Stats Section */
-        .stats {
+        /* Main Content */
+        .main-content {
             padding: 4rem 2rem;
-            background: var(--bg-secondary);
-        }
-
-        .stats-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
         }
 
-        .stat-card {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Section Styles */
         .section {
-            padding: 5rem 2rem;
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: var(--border-radius-small);
+            font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+        }
+
+        .status-current {
+            background: linear-gradient(45deg, #10b981, #34d399);
+            color: white;
+        }
+
+        .status-completed {
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            color: white;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
 
-        .section-subtitle {
-            font-size: 1.2rem;
+        .project-subtitle {
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-achievements {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-achievements li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #e2e8f0, #f1f5f9);
+            color: var(--text-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--border-radius-small);
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius-small);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .project-link.primary {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         /* Skills Section */
-        .skills-grid {
+        .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .skill-category {
-            background: var(--bg-secondary);
+            background: var(--card-bg);
             padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-sm);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
         }
 
         .skill-category:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .skill-category h3 {
             font-size: 1.3rem;
             font-weight: 600;
-            color: var(--primary-color);
             margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
         }
 
         .skill-item {
-            margin-bottom: 1rem;
-        }
-
-        .skill-item strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .skill-item span {
-            color: var(--text-secondary);
-            margin-left: 0.5rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            gap: 3rem;
-        }
-
-        .project-card {
-            background: var(--bg-secondary);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-small);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        .skill-item:hover {
+            background: var(--accent-gradient);
             color: white;
-            padding: 2rem;
+            transform: scale(1.05);
         }
 
-        .project-title {
-            font-size: 1.8rem;
-            font-weight: 700;
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-gradient);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary-gradient);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--border-color);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
         }
 
-        .project-period {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .project-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .metric {
-            background: var(--bg-primary);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .project-tech {
-            margin-top: 1.5rem;
-        }
-
-        .project-tech strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .project-tech span {
-            color: var(--text-secondary);
-            margin-left: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--bg-secondary);
-        }
-
-        .contact-content {
-            text-align: center;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
+        .experience-organization {
+            color: #667eea;
             font-weight: 500;
-            transition: color 0.3s ease;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-link:hover {
-            color: var(--primary-color);
+        .experience-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Footer */
         .footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border-color);
-            padding: 2rem;
+            background: var(--dark-gradient);
+            color: white;
             text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
-            color: var(--text-muted);
         }
 
-        /* Mobile Responsiveness */
+        .footer h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .footer .social-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--accent-gradient);
+            margin: 2rem auto;
+            border-radius: 1px;
+        }
+
+        .footer-bottom {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .skills-grid {
+            
+            .skills-container {
                 grid-template-columns: 1fr;
             }
 
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
+            .social-links {
+                gap: 1rem;
             }
 
-            .contact-links {
-                flex-direction: column;
-                gap: 1rem;
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .experience-timeline {
+                padding-left: 1.5rem;
+            }
+
+            .experience-item::before {
+                left: -2rem;
             }
         }
 
@@ -478,374 +565,474 @@
             scroll-behavior: smooth;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
 
-        .animate-on-scroll {
-            animation: fadeInUp 0.6s ease-out;
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Cemre Dag</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <button class="theme-toggle" onclick="toggleTheme()">
-                        <i class="fas fa-moon" id="theme-icon"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
+        <div class="hero-content">
             <h1 class="hero-title">Cemre Dag</h1>
-            <h2 class="hero-subtitle">Machine Learning Engineer | Computer Vision | Sustainability Tech</h2>
+            <p class="hero-subtitle">ML Engineer | Computer Vision & Digital Signal Processing</p>
             <p class="hero-description">
-                Leveraging cutting-edge AI technologies to create sustainable solutions for global challenges. 
-                Specializing in healthcare AI, computer vision, and enterprise ML systems with proven results.
+                A solution-oriented engineer specializing in machine learning, signal processing, and image processing. 
+                Excels in challenging, dynamic environments that push her beyond her comfort zone; while learning, 
+                she aims to deliver tangible value and develop sustainable solutions. An active volunteer in social 
+                responsibility projects, she prioritizes initiatives that protect people, animals, and the environment.
             </p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-code"></i>
-                    View My Work
+            <div class="social-links">
+                <a href="https://linkedin.com/in/cemred" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#contact" class="btn btn-secondary">
+                <a href="https://kaggle.com/gumaruw" class="social-link" target="_blank">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+                <a href="mailto:cemred.istanbul@gmail.com" class="social-link">
                     <i class="fas fa-envelope"></i>
-                    Get In Touch
+                </a>
+                <a href="https://github.com/gumaruw" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">
-                    Results-driven Machine Learning Engineer with 4+ years of experience designing and implementing 
-                    end-to-end ML pipelines for healthcare AI, computer vision, and enterprise data systems.
-                </p>
-            </div>
-            <div class="stats-container">
-                <div class="stat-card">
-                    <h3>Mission</h3>
-                    <p>Building AI solutions that transform complex data into actionable intelligence while creating positive social and environmental impact.</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Focus Areas</h3>
-                    <p>Healthcare Technology, Financial Services, Sustainability Solutions with emphasis on MLOps and production-ready systems.</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Values</h3>
-                    <p>Technical Excellence, Innovation, Sustainability, Social Impact, and Continuous Learning drive every project I undertake.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section" id="skills" style="background: var(--bg-secondary);">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Expertise</h2>
-                <p class="section-subtitle">
-                    Comprehensive skill set spanning machine learning, deep learning, and production deployment
-                </p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Machine Learning & Deep Learning</h3>
-                    <div class="skill-item">
-                        <strong>Frameworks:</strong>
-                        <span>TensorFlow, PyTorch, Keras, scikit-learn, XGBoost, LightGBM</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Computer Vision:</strong>
-                        <span>OpenCV, U-Net, ResNet, CNN design, Real-time processing</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Medical AI:</strong>
-                        <span>Medical imaging analysis, Clinical decision support, Diagnostic AI</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-language"></i> NLP & Language Models</h3>
-                    <div class="skill-item">
-                        <strong>Technologies:</strong>
-                        <span>Transformer models, BERT, RAG systems, Vector databases</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Document Processing:</strong>
-                        <span>Multi-format parsing, Text extraction pipelines, Context-aware retrieval</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> MLOps & Data Engineering</h3>
-                    <div class="skill-item">
-                        <strong>Languages:</strong>
-                        <span>Python, SQL, Java, JavaScript</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Cloud:</strong>
-                        <span>GCP, Azure, BigQuery, CI/CD pipelines</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Databases:</strong>
-                        <span>MySQL, SQL Server, SQLite, Vector databases</span>
-                    </div>
-                    <div class="skill-item">
-                        <strong>Tools:</strong>
-                        <span>Git, GitHub, REST APIs, Tableau</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">
-                    Production-ready ML solutions with measurable business impact and technical innovation
-                </p>
-            </div>
+    <main class="main-content">
+        <!-- Current Research -->
+        <section class="section scroll-fade">
+            <h2 class="section-title">Current Research</h2>
             <div class="projects-grid">
-                <!-- SifAI Project -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">SifAI - Medical AI Diagnostic Platform</div>
-                        <div class="project-period">February 2025 - June 2025 | Graduation Thesis Project</div>
+                    <span class="project-status status-current">Research in Progress</span>
+                    <h3 class="project-title">VitaLight | rPPG Heart Rate Detection</h3>
+                    <p class="project-subtitle">Sep 2025 - Present</p>
+                    <p class="project-description">
+                        Developing an advanced system that detects heart rate from facial video using remote photoplethysmography (rPPG), 
+                        analyzing subtle color changes in skin caused by blood circulation. Following the Spiral Model methodology for 
+                        iterative research and development.
+                    </p>
+                    <ul class="project-achievements">
+                        <li>Implemented CHROM, POS, and GREEN algorithms for robust signal extraction</li>
+                        <li>Achieved 6.5% error rate improvement through hybrid algorithm design</li>
+                        <li>Advanced temporal filtering and multi-ROI processing pipeline</li>
+                        <li>Signal quality assessment and confidence-weighted estimation</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">SciPy</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">Computer Vision</span>
                     </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Comprehensive medical AI platform combining brain tumor classification and skin cancer detection 
-                            for clinical decision support. Dual-model system with custom loss functions and intensive optimization.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">95.83%</div>
-                                <div class="metric-label">Segmentation Accuracy</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">89.55%</div>
-                                <div class="metric-label">Cancer Detection</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">93.88%</div>
-                                <div class="metric-label">AUC Score</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">10K+</div>
-                                <div class="metric-label">Images Processed</div>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <strong>Tech Stack:</strong>
-                            <span>TensorFlow, Keras, OpenCV, U-Net, ResNet50, Medical imaging processing</span>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/VitaLight" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> View Research
+                        </a>
                     </div>
                 </div>
 
-                <!-- DocuMind Project -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">DocuMind - Enterprise RAG System</div>
-                        <div class="project-period">January 2025 - April 2025 | ÜNLÜ & Co Financial Services</div>
+                    <span class="project-status status-current">Educational Project</span>
+                    <h3 class="project-title">CV & DSP Practices</h3>
+                    <p class="project-subtitle">Feb 2024 - Present</p>
+                    <p class="project-description">
+                        A collection of hands-on exercises in Computer Vision and Digital Signal Processing, designed to be 
+                        practical and educational for learning core concepts step by step.
+                    </p>
+                    <ul class="project-achievements">
+                        <li>Practical mini-projects covering fundamental CV and DSP concepts</li>
+                        <li>Educational resource for learning signal processing techniques</li>
+                        <li>Step-by-step implementations with clear documentation</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">SciPy</span>
+                        <span class="tech-tag">DSP</span>
                     </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Enterprise-grade RAG system for financial document analysis with security and scalability focus, 
-                            ensuring data privacy compliance through local deployment architecture.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">1,700+</div>
-                                <div class="metric-label">Documents Processed</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">70%</div>
-                                <div class="metric-label">Q&A Accuracy</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">65%</div>
-                                <div class="metric-label">Time Reduction</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">100%</div>
-                                <div class="metric-label">Data Security</div>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <strong>Tech Stack:</strong>
-                            <span>Python, Transformer models, Vector databases, RAG architecture, LangChain</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Food Detective Project -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Food Detective - AI Nutrition Tracking</div>
-                        <div class="project-period">January 2025 - April 2025 | Superint Software</div>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">
-                            Led AI component development for intelligent mobile application enabling food identification, 
-                            nutritional analysis, and personalized meal tracking with real-time processing capabilities.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">88%</div>
-                                <div class="metric-label">Food ID Accuracy</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">99.7%</div>
-                                <div class="metric-label">Text Processing</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">75%</div>
-                                <div class="metric-label">Lookup Reduction</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">28%</div>
-                                <div class="metric-label">User Retention</div>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <strong>Tech Stack:</strong>
-                            <span>Python, TensorFlow, Gemini API, Computer Vision, SQL, Cloud infrastructure</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Projects Summary -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">Additional Notable Projects</div>
-                        <div class="project-period">2024 - 2025</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">Top 5%</div>
-                                <div class="metric-label">YZTA Datathon</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">92%</div>
-                                <div class="metric-label">Sign Language Recognition</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">30+</div>
-                                <div class="metric-label">Creative Coding Projects</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">25+ FPS</div>
-                                <div class="metric-label">Real-time Processing</div>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Diverse portfolio including competitive programming (Ranked 24th/543 in Google-associated competition), 
-                            accessibility-focused computer vision, cryptocurrency analysis platforms, and creative computational art projects.
-                        </p>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/cv-and-dsp-practices" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> Explore Practices
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Build Something Amazing</h2>
-                <p class="section-subtitle">
-                    Available immediately for remote international opportunities. 
-                    Seeking ML Engineer or AI Developer positions focused on sustainability, healthcare, or fintech.
-                </p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-links">
-                    <a href="mailto:cemred.istanbul@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        cemred.istanbul@gmail.com
-                    </a>
-                    <a href="https://linkedin.com/in/cemred" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/gumaruw" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                    <a href="https://www.kaggle.com/gumaruw" class="contact-link" target="_blank">
-                        <i class="fab fa-kaggle"></i>
-                        Kaggle
-                    </a>
+        <!-- Major Projects -->
+        <section class="section scroll-fade">
+            <h2 class="section-title">Major Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-status status-completed">Thesis Project - Completed</span>
+                    <h3 class="project-title">SifAI | Brain Tumor & Skin Cancer Analysis</h3>
+                    <p class="project-subtitle">Feb 2025 - Jun 2025</p>
+                    <p class="project-description">
+                        Developed a dual-model AI system for medical image analysis, featuring brain tumor classification 
+                        and skin cancer detection with clinical anamnesis integration. Led a collaborative effort to deliver 
+                        a comprehensive deep learning solution for healthcare applications.
+                    </p>
+                    <ul class="project-achievements">
+                        <li>Achieved 93% accuracy for brain tumor classification</li>
+                        <li>Built U-Net segmentation model with 95.83% pixel-level accuracy and 84.95% IoU</li>
+                        <li>Trained ResNet50-based classifier with 89.55% accuracy and 93.88% AUC</li>
+                        <li>Processed 10,000+ HAM10000 dermoscopic images with advanced augmentation</li>
+                        <li>Collaborated in 5-person team integrating multiple AI modules</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">U-Net</span>
+                        <span class="tech-tag">ResNet50</span>
+                        <span class="tech-tag">Medical AI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/Skin-Cancer-SifAI" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> Segmentation Model
+                        </a>
+                        <a href="https://github.com/gumaruw/Skin-Cancer-Binary" class="project-link secondary" target="_blank">
+                            <i class="fab fa-github"></i> Classification Model
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-status status-completed">Enterprise RAG System</span>
+                    <h3 class="project-title">DocuMind | Enterprise RAG System</h3>
+                    <p class="project-subtitle">ÜNLÜ & Co | AI & NLP Internship</p>
+                    <p class="project-description">
+                        Built a secure, enterprise-grade Retrieval-Augmented Generation system for financial document analysis. 
+                        Designed to handle diverse document formats while ensuring full data privacy and regulatory compliance 
+                        for financial institutions.
+                    </p>
+                    <ul class="project-achievements">
+                        <li>Processed 1,700+ internal documents across PDF, Word, and table formats</li>
+                        <li>Achieved 70% accuracy in Q&A tasks and 65% reduction in manual research time</li>
+                        <li>Implemented vector database infrastructure for semantic search</li>
+                        <li>Deployed locally ensuring full data privacy and regulatory compliance</li>
+                        <li>Delivered scalable architecture supporting 500–1,000 employees</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">FAISS</span>
+                        <span class="tech-tag">RAG</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/DocuMind" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> View System
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-status status-completed">Research Project</span>
+                    <h3 class="project-title">SignFlow | Real-Time ASL Recognition</h3>
+                    <p class="project-subtitle">Oct 2024 - Feb 2025</p>
+                    <p class="project-description">
+                        Led development of a real-time American Sign Language recognition system to support communication 
+                        for hearing-impaired individuals. Managed full project lifecycle including team coordination and 
+                        technical implementation.
+                    </p>
+                    <ul class="project-achievements">
+                        <li>Achieved 92%+ validation accuracy in letter recognition</li>
+                        <li>Preprocessed and normalized 10,000+ image samples</li>
+                        <li>Designed CNN architecture optimized for real-time performance</li>
+                        <li>Supported dynamic gestures including complex letters like J and Z</li>
+                        <li>Led project management including task delegation and progress tracking</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Real-time Processing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/SignFlow" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-status status-completed">Creative Technology</span>
+                    <h3 class="project-title">Creative Coding with P5.js</h3>
+                    <p class="project-subtitle">Feb 2024 - Sep 2024</p>
+                    <p class="project-description">
+                        Explored the intersection of art and technology through algorithmic design and interactive visualizations. 
+                        Combined computational geometry with aesthetic principles to create meaningful digital art experiences.
+                    </p>
+                    <ul class="project-achievements">
+                        <li>Developed 30+ interactive, algorithm-driven sketches on Open Processing</li>
+                        <li>Applied computational geometry and mathematical models for scalable outputs</li>
+                        <li>Combined digital art aesthetics with algorithmic structures</li>
+                        <li>Explored parametric systems for dynamic visual representations</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">P5.js</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Generative Art</span>
+                        <span class="tech-tag">Interactive Design</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/creative-coding-p5js" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> View Sketches
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section scroll-fade">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain" style="color: #667eea; margin-right: 0.5rem;"></i>Machine Learning & AI</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">Keras</span>
+                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item">XGBoost</span>
+                        <span class="skill-item">LightGBM</span>
+                        <span class="skill-item">CNN</span>
+                        <span class="skill-item">U-Net</span>
+                        <span class="skill-item">Transformers</span>
+                        <span class="skill-item">ResNet50</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-eye" style="color: #f093fb; margin-right: 0.5rem;"></i>Computer Vision & NLP</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">OpenCV</span>
+                        <span class="skill-item">MediaPipe</span>
+                        <span class="skill-item">BERT</span>
+                        <span class="skill-item">RAG Systems</span>
+                        <span class="skill-item">Signal Processing</span>
+                        <span class="skill-item">Image Segmentation</span>
+                        <span class="skill-item">Object Detection</span>
+                        <span class="skill-item">NLP Pipelines</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-code" style="color: #4facfe; margin-right: 0.5rem;"></i>Programming & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">CUDA</span>
+                        <span class="skill-item">Git/GitHub</span>
+                        <span class="skill-item">MLflow</span>
+                        <span class="skill-item">CI/CD</span>
+                        <span class="skill-item">RESTful APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line" style="color: #10b981; margin-right: 0.5rem;"></i>Data & Visualization</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Tableau</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">SciPy</span>
+                        <span class="skill-item">P5.js</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">Statistical Modeling</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud" style="color: #764ba2; margin-right: 0.5rem;"></i>Cloud & Infrastructure</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Google Cloud Platform</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">FAISS</span>
+                        <span class="skill-item">Vector Databases</span>
+                        <span class="skill-item">Model Deployment</span>
+                        <span class="skill-item">Scalable Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Development -->
+        <section class="section scroll-fade">
+            <h2 class="section-title">Professional Development</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3 class="experience-title">Aspire Leaders Program Scholar</h3>
+                    <p class="experience-organization">Aspire Institute (Harvard Business School Partnership)</p>
+                    <p class="experience-date">2025</p>
+                    <p class="experience-description">
+                        Selected as scholar among 51 winners from 32 countries. Mastered strengths-based leadership, 
+                        digital transformation, and AI applications. Awarded Academic Advancement Grant for outstanding performance.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">McKinsey Forward Program Graduate</h3>
+                    <p class="experience-organization">McKinsey & Company</p>
+                    <p class="experience-date">2025</p>
+                    <p class="experience-description">
+                        Completed the intensive 10-week program, demonstrating analytical rigor, strategic thinking, and growth mindset. 
+                        Developed critical business skills in team dynamics, strategic communication, and professional development, 
+                        earning the Forward digital badge.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">Google Developer Student Clubs Co-Lead</h3>
+                    <p class="experience-organization">Doğuş University</p>
+                    <p class="experience-date">2024</p>
+                    <p class="experience-description">
+                        Managed event planning and coordination, optimizing community operations and learning outcomes. 
+                        Led initiatives to foster technical skills development and community engagement among students.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">IEEE Computer Society Core Team Member</h3>
+                    <p class="experience-organization">Doğuş University</p>
+                    <p class="experience-date">2021-2023</p>
+                    <p class="experience-description">
+                        Took active leadership roles in event planning, moderation, and content creation. Organized 20+ technical events, 
+                        developing strong project management, communication, and team coordination skills through hands-on experience.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">Yetkin Gençler Program Graduate</h3>
+                    <p class="experience-organization">Competent Youth Program</p>
+                    <p class="experience-date">2022</p>
+                    <p class="experience-description">
+                        Completed comprehensive 12-week, 88-hour training program focused on 21st-century competencies. 
+                        Strengthened critical thinking, problem-solving, teamwork, and presentation skills through intensive 
+                        project-based learning workshops covering sustainability and entrepreneurship.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Cemre Dag. Building AI solutions for a sustainable future.</p>
+            <h3>Let's Connect</h3>
+            <p>
+                Interested in collaborating on cutting-edge AI projects or discussing opportunities in machine learning and computer vision? 
+                I'm always excited to connect with fellow researchers, engineers, and innovative teams.
+            </p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/cemred" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://kaggle.com/gumaruw" class="social-link" target="_blank">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+                <a href="mailto:cemred.istanbul@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/gumaruw" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-bottom">
+                © 2025 Cemre Dag. Crafted with passion for AI and innovation.
+            </p>
         </div>
     </footer>
 
     <script>
-        // Theme toggle functionality
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            
-            if (body.hasAttribute('data-theme')) {
-                body.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Load saved theme
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-            }
+        // Loading animation
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
         });
 
-        // Smooth scrolling for navigation links
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-fade elements
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -859,62 +1046,90 @@
             });
         });
 
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.backdropFilter = 'blur(10px)';
-            } else {
-                nav.style.background = 'var(--bg-primary)';
-                nav.style.backdropFilter = 'blur(10px)';
+        // Enhanced hover effects for project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Dynamic gradient animation
+        let gradientAngle = 0;
+        setInterval(() => {
+            gradientAngle += 1;
+            document.documentElement.style.setProperty(
+                '--primary-gradient', 
+                `linear-gradient(${135 + Math.sin(gradientAngle * 0.01) * 45}deg, #667eea 0%, #764ba2 100%)`
+            );
+        }, 100);
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
+        // Typing effect for hero title (subtle enhancement)
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            let i = 0;
+            const typing = setInterval(() => {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typing);
+                }
+            }, 100);
+        }
+
+        // Skills animation on scroll
+        const skillItems = document.querySelectorAll('.skill-item');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
+                    setTimeout(() => {
+                        entry.target.style.animation = 'skillPop 0.6s ease forwards';
+                        entry.target.style.transform = 'scale(1)';
+                        entry.target.style.opacity = '1';
+                    }, index * 50);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.5 });
 
-        // Observe all sections and cards
-        document.querySelectorAll('.section, .project-card, .stat-card, .skill-category').forEach(el => {
-            observer.observe(el);
+        skillItems.forEach(skill => {
+            skill.style.opacity = '0';
+            skill.style.transform = 'scale(0.8)';
+            skillObserver.observe(skill);
         });
 
-        // Mobile menu toggle (for future enhancement)
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('mobile-open');
-        }
-
-        // Add typing effect to hero title (optional enhancement)
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
+        // Add skill animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes skillPop {
+                0% { opacity: 0; transform: scale(0.8); }
+                50% { transform: scale(1.1); }
+                100% { opacity: 1; transform: scale(1); }
             }
-            type();
-        }
+        `;
+        document.head.appendChild(style);
 
-        // Initialize typing effect on load
-        window.addEventListener('load', function() {
-            // Optional: Add typing effect to hero title
-            // const heroTitle = document.querySelector('.hero-title');
-            // typeWriter(heroTitle, 'Cemre Dag', 150);
+        // Project link tracking (analytics ready)
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const projectTitle = this.closest('.project-card').querySelector('.project-title').textContent;
+                console.log(`Project link clicked: ${projectTitle}`);
+                // Add analytics tracking here if needed
+            });
         });
     </script>
 </body>
