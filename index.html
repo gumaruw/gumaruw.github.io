@@ -56,6 +56,65 @@
             overflow-x: hidden;
         }
 
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom-left-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-item a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover::after {
+            width: 80%;
+        }
+
+        .nav-item a.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .nav-item a.active::after {
+            width: 80%;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -97,12 +156,13 @@
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f0f8ff, #e6f3ff);
-            background-size: 200% 200%;
+            background: linear-gradient(45deg, #ffffff, #f0f8ff, #e6f3ff, #ffffff);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientShift 3s ease-in-out infinite;
+            animation: gradientShift 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
         }
 
         @keyframes gradientShift {
@@ -191,6 +251,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
+            color: var(--text-primary);
         }
 
         .section-title::after {
@@ -210,6 +271,33 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+        }
+
+        .projects-grid.masonry {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            grid-auto-rows: masonry;
+        }
+
+        .projects-grid.masonry .project-card:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .projects-grid.masonry .project-card:nth-child(2) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        .projects-grid.masonry .project-card:nth-child(3) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .projects-grid.masonry .project-card:nth-child(4) {
+            grid-column: span 1;
+            grid-row: span 1;
         }
 
         .project-card {
@@ -413,10 +501,38 @@
             transition: all 0.3s ease;
         }
 
-        .skill-item:hover {
+        .skill-item {
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-small);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
             background: var(--accent-gradient);
+            transition: left 0.6s ease;
+            z-index: -1;
+        }
+
+        .skill-item:hover {
             color: white;
             transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.3);
+        }
+
+        .skill-item:hover::before {
+            left: 0;
         }
 
         /* Experience Section */
@@ -531,10 +647,100 @@
             font-size: 0.9rem;
         }
 
+        /* Additional Sections */
+        .mini-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mini-project-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .mini-project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .mini-project-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .mini-project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .mini-project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mini-project-link:hover {
+            color: #764ba2;
+            transform: translateX(3px);
+        }
+
+        /* Resume Button */
+        .resume-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--secondary-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            margin: 2rem 0;
+        }
+
+        .resume-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
-            .projects-grid {
+            .navbar {
+                position: relative;
+                background: rgba(102, 126, 234, 0.9);
+                border-radius: 0;
+                padding: 1rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .projects-grid.masonry {
                 grid-template-columns: 1fr;
+            }
+
+            .projects-grid.masonry .project-card {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
             }
             
             .skills-container {
@@ -619,8 +825,19 @@
         <div class="loading-spinner"></div>
     </div>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#about">About Me</a></li>
+            <li class="nav-item"><a href="#skills">Skills</a></li>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#experience">Experience</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="hero-content">
             <h1 class="hero-title">Cemre Dag</h1>
             <p class="hero-subtitle">ML Engineer | Computer Vision & Digital Signal Processing</p>
@@ -630,6 +847,10 @@
                 she aims to deliver tangible value and develop sustainable solutions. An active volunteer in social 
                 responsibility projects, she prioritizes initiatives that protect people, animals, and the environment.
             </p>
+            <a href="#resume" class="resume-button">
+                <i class="fas fa-download"></i>
+                Download Resume
+            </a>
             <div class="social-links">
                 <a href="https://linkedin.com/in/cemred" class="social-link" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
@@ -649,7 +870,7 @@
 
     <main class="main-content">
         <!-- Current Research -->
-        <section class="section scroll-fade">
+        <section class="section scroll-fade" id="projects">
             <h2 class="section-title">Current Research</h2>
             <div class="projects-grid">
                 <div class="project-card">
@@ -714,7 +935,7 @@
         <!-- Major Projects -->
         <section class="section scroll-fade">
             <h2 class="section-title">Major Projects</h2>
-            <div class="projects-grid">
+            <div class="projects-grid masonry">
                 <div class="project-card">
                     <span class="project-status status-completed">Thesis Project - Completed</span>
                     <h3 class="project-title">SifAI | Brain Tumor & Skin Cancer Analysis</h3>
@@ -841,7 +1062,7 @@
         </section>
 
         <!-- Technical Skills -->
-        <section class="section scroll-fade">
+        <section class="section scroll-fade" id="skills">
             <h2 class="section-title">Technical Expertise</h2>
             <div class="skills-container">
                 <div class="skill-category">
@@ -916,8 +1137,43 @@
             </div>
         </section>
 
-        <!-- Professional Development -->
+        <!-- Mini Projects -->
         <section class="section scroll-fade">
+            <h2 class="section-title">Mini Projects & Experiments</h2>
+            <div class="mini-projects">
+                <div class="mini-project-card">
+                    <h4>Image Colorization</h4>
+                    <p>Deep learning model to colorize black and white images using CNN architecture</p>
+                    <a href="#" class="mini-project-link">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>Sentiment Analysis Bot</h4>
+                    <p>Twitter sentiment analysis using NLP and machine learning techniques</p>
+                    <a href="#" class="mini-project-link">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>Stock Price Predictor</h4>
+                    <p>LSTM-based model for predicting stock prices with technical indicators</p>
+                    <a href="#" class="mini-project-link">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>Face Recognition System</h4>
+                    <p>Real-time face detection and recognition using OpenCV and deep learning</p>
+                    <a href="#" class="mini-project-link">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Development -->
+        <section class="section scroll-fade" id="experience">
             <h2 class="section-title">Professional Development</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
@@ -976,7 +1232,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer-content">
             <h3>Let's Connect</h3>
             <p>
@@ -999,7 +1255,7 @@
             </div>
             <div class="footer-divider"></div>
             <p class="footer-bottom">
-                © 2025 Cemre Dag. Crafted with passion for AI and innovation.
+                © All rights reserved - Cemre Dag 2025
             </p>
         </div>
     </footer>
@@ -1038,10 +1294,32 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = target.offsetTop - 80; // Account for navbar height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-item a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
                 }
             });
         });
@@ -1066,15 +1344,15 @@
             }
         });
 
-        // Dynamic gradient animation
+        // Dynamic gradient animation (more subtle)
         let gradientAngle = 0;
         setInterval(() => {
-            gradientAngle += 1;
+            gradientAngle += 0.5;
             document.documentElement.style.setProperty(
                 '--primary-gradient', 
-                `linear-gradient(${135 + Math.sin(gradientAngle * 0.01) * 45}deg, #667eea 0%, #764ba2 100%)`
+                `linear-gradient(${135 + Math.sin(gradientAngle * 0.01) * 15}deg, #667eea 0%, #764ba2 100%)`
             );
-        }, 100);
+        }, 200);
 
         // Typing effect for hero title (subtle enhancement)
         const heroTitle = document.querySelector('.hero-title');
