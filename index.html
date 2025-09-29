@@ -60,13 +60,15 @@
         .navbar {
             position: fixed;
             top: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
             padding: 1rem 2rem;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
-            border-bottom-left-radius: 20px;
+            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 1rem;
         }
 
         .nav-menu {
@@ -591,7 +593,14 @@
         .experience-date {
             color: var(--text-muted);
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
             margin-bottom: 1rem;
+            font-style: italic;
         }
 
         .experience-description {
@@ -755,49 +764,7 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* Certifications Section */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
 
-        .certification-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--accent-gradient);
-        }
-
-        .certification-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .certification-card h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .certification-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .certification-link:hover {
-            color: #764ba2;
-            transform: translateX(3px);
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -918,7 +885,6 @@
             <li class="nav-item"><a href="#skills">Skills</a></li>
             <li class="nav-item"><a href="#professional-experience">Professional Experience</a></li>
             <li class="nav-item"><a href="#other-experience">Other Experience</a></li>
-            <li class="nav-item"><a href="#certifications">Certifications</a></li>
             <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -1022,7 +988,7 @@
                 <div class="project-card">
                     <span class="project-status status-current">Educational Project</span>
                     <h3 class="project-title">CV & DSP Practices</h3>
-                    <p class="project-subtitle">Aug 2024 - Present</p>
+                    <p class="project-subtitle">Aug 2025 - Present</p>
                     <p class="project-description">
                         A collection of hands-on exercises in Computer Vision and Digital Signal Processing, designed to be 
                         practical and educational for learning core concepts step by step.
@@ -1053,9 +1019,9 @@
             <h2 class="section-title">Major Projects</h2>
             <div class="projects-grid masonry">
                 <div class="project-card">
-                    <span class="project-status status-completed">Thesis Project - Completed</span>
+                    <span class="project-status status-completed">Thesis Project</span>
                     <h3 class="project-title">SifAI | Brain Tumor & Skin Cancer Analysis</h3>
-                    <p class="project-subtitle">Feb 2025 - Jun 2025</p>
+                    <p class="project-subtitle">Feb - Jun 2025</p>
                     <p class="project-description">
                         Developed a dual-model AI system for medical image analysis, featuring brain tumor classification 
                         and skin cancer detection with clinical anamnesis integration. Led a collaborative effort to deliver 
@@ -1088,8 +1054,8 @@
 
                 <div class="project-card">
                     <span class="project-status status-completed">Enterprise RAG System</span>
-                    <h3 class="project-title">DocuMind | Enterprise RAG System</h3>
-                    <p class="project-subtitle">ÜNLÜ & Co | AI & NLP Internship</p>
+                    <h3 class="project-title">DocuMind</h3>
+                    <p class="project-subtitle">Jan - Feb 2025</p>
                     <p class="project-description">
                         Built a secure, enterprise-grade Retrieval-Augmented Generation system for financial document analysis. 
                         Designed to handle diverse document formats while ensuring full data privacy and regulatory compliance 
@@ -1112,7 +1078,7 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/gumaruw/DocuMind" class="project-link primary" target="_blank">
-                            <i class="fab fa-github"></i> View System
+                            <i class="fab fa-github"></i> View Project
                         </a>
                     </div>
                 </div>
@@ -1251,8 +1217,7 @@
                     <div class="skill-list">
                         <span class="skill-item">OpenCV</span>
                         <span class="skill-item">MediaPipe</span>
-                        <span class="skill-item">BERT</span>
-                        <span class="skill-item">RAG Systems</span>
+                        <span class="skill-item">RAG</span>
                         <span class="skill-item">Signal Processing</span>
                         <span class="skill-item">Image Segmentation</span>
                         <span class="skill-item">Object Detection</span>
@@ -1284,7 +1249,6 @@
                         <span class="skill-item">SciPy</span>
                         <span class="skill-item">P5.js</span>
                         <span class="skill-item">Data Analysis</span>
-                        <span class="skill-item">Statistical Modeling</span>
                     </div>
                 </div>
 
@@ -1292,8 +1256,6 @@
                     <h3><i class="fas fa-cloud" style="color: #764ba2; margin-right: 0.5rem;"></i>Cloud & Infrastructure</h3>
                     <div class="skill-list">
                         <span class="skill-item">Google Cloud Platform</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">FAISS</span>
                         <span class="skill-item">Vector Databases</span>
                         <span class="skill-item">Model Deployment</span>
                         <span class="skill-item">Scalable Architecture</span>
@@ -1304,52 +1266,60 @@
 
         <!-- Professional Experience -->
         <section class="section scroll-fade" id="professional-experience">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Experience</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
                     <h3 class="experience-title">Volunteer Data Analyst</h3>
                     <p class="experience-organization">Superint Software</p>
+                    <p class="experience-location">Istanbul, Turkey · Hybrid</p>
                     <p class="experience-date">Jan - April 2025</p>
                     <p class="experience-description">
-                        Led AI component development for the Nutrivine mobile app (live project). Developed personalized insight engine 
-                        using Gemini API for diet pattern analysis and real-time image processing. Integrated USDA food database for 
-                        accurate nutrition data with offline support using SQLite and cloud-based infrastructure. Achieved 88% accuracy 
-                        in food recognition and 99.7% accuracy in text-based journaling. Reduced query time using TF-IDF, minimized 
-                        storage by 60%, and improved user retention by 28% through data insights.
+                        <li>Led AI component development for the Nutrivine mobile app (live project)</li>
+                        <li>Developed personalized insight engine using Gemini API for diet pattern analysis and real-time image processing</li>
+                        <li>Integrated USDA food database for accurate nutrition data with offline support using SQLite and cloud-based infrastructure</li> 
+                        <li>Achieved 88% accuracy in food recognition and 99.7% accuracy in text-based journaling</li> 
+                        <li>Reduced query time using TF-IDF, minimized storage by 60%, and improved user retention by 28% through data insights</li>
                     </p>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">AI & NLP Intern</h3>
                     <p class="experience-organization">ÜNLÜ & Co</p>
+                    <p class="experience-location">Istanbul, Turkey · Hybrid</p>
                     <p class="experience-date">Jan - Feb 2025</p>
                     <p class="experience-description">
-                        Developed a RAG-based DocuMind system for financial documents across PDF, Word, tables, and visuals. 
-                        Processed 1,700+ files to generate context-aware responses and reduced research time significantly. 
-                        Applied NLP, IR, BERT, and transformer models to deliver a secure, scalable, and compliance-ready 
-                        system supporting 500–1,000 employees.
+                        <li>Developed a RAG-based DocuMind system for financial documents across PDF, Word, tables, and visuals</li> 
+                        <li>Processed 1,700+ files to generate context-aware responses and reduced research time significantly</li> 
+                        <li>Applied NLP, IR, BERT, and transformer models to deliver a secure, scalable, and compliance-ready 
+                        system supporting 500–1,000 employees</li>
                     </p>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">SQL Development Intern</h3>
                     <p class="experience-organization">FLO Group</p>
+                    <p class="experience-location">Istanbul, Turkey · Remote</p>
                     <p class="experience-date">Jul - Aug 2024</p>
                     <p class="experience-description">
-                        Accelerated data analysis and enhanced accuracy by applying advanced SQL techniques and query optimizations 
-                        on large datasets. Improved data processing efficiency and contributed to business intelligence initiatives.
+                        <li>Accelerated data analysis and enhanced accuracy by applying advanced SQL techniques and query optimizations 
+                        on large datasets</li>
+                        <li>Improved data processing efficiency and contributed to business intelligence initiatives</li>
                     </p>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">Full Stack Development Intern</h3>
-                    <p class="experience-organization">Satel Informatics Software Education</p>
+                    <p class="experience-organization">Satel Informatics</p>
+                    <p class="experience-location">Antalya, Turkey · Remote</p>
                     <p class="experience-date">Jul - Aug 2023</p>
                     <p class="experience-description">
-                        Developed a tourism-focused news aggregation platform leveraging Twitter data. Implemented dynamic data flow 
-                        and real-time content management with RESTful APIs and SQL databases. Designed responsive, user-friendly 
-                        interfaces using HTML, CSS, and JavaScript. Gained hands-on expertise in backend development, frontend 
-                        integration, and application architecture.
+                        <li>Developed a tourism-focused news aggregation platform leveraging Twitter data</li> 
+                        <li>Implemented dynamic data flow 
+                        and real-time content management with RESTful APIs and SQL databases</li> 
+                        <li>Designed responsive, user-friendly 
+                        interfaces using HTML, CSS, and JavaScript</li> 
+                        <li>Gained hands-on expertise in backend development, frontend 
+                        integration, and application architecture</li>
                     </p>
                 </div>
             </div>
@@ -1360,55 +1330,100 @@
             <h2 class="section-title">Leadership & Community Experience</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
-                    <h3 class="experience-title">Aspire Leaders Program Scholar</h3>
-                    <p class="experience-organization">Aspire Institute (Harvard Business School Partnership)</p>
-                    <p class="experience-date">2025</p>
-                    <p class="experience-description">
-                        Selected as scholar among 51 winners from 32 countries. Mastered strengths-based leadership, 
-                        digital transformation, and AI applications. Awarded Academic Advancement Grant for outstanding performance.
-                    </p>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="experience-title">McKinsey Forward Program Graduate</h3>
+                    <h3 class="experience-title">McKinsey Forward Alumni</h3>
                     <p class="experience-organization">McKinsey & Company</p>
+                    <p class="experience-location">New York, United States · Remote</p>
                     <p class="experience-date">2025</p>
                     <p class="experience-description">
                         Completed the intensive 10-week program, demonstrating analytical rigor, strategic thinking, and growth mindset. 
-                        Developed critical business skills in team dynamics, strategic communication, and professional development, 
-                        earning the Forward digital badge.
+                        Developed critical business skills in team dynamics, communication, and professional development
                     </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">Google Developer Student Clubs Co-Lead</h3>
-                    <p class="experience-organization">Doğuş University</p>
-                    <p class="experience-date">2024</p>
+                    <p class="experience-organization">Dogus University</p>
+                    <p class="experience-location">Istanbul, Turkey · On-Site</p>
+                    <p class="experience-date">2025</p>
                     <p class="experience-description">
                         Managed event planning and coordination, optimizing community operations and learning outcomes. 
                         Led initiatives to foster technical skills development and community engagement among students.
                     </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class="fas fa-briefcase"></i> View Work
+                        </a>
+                    </div>
                 </div>
 
                 <div class="experience-item">
-                    <h3 class="experience-title">IEEE Computer Society Core Team Member</h3>
-                    <p class="experience-organization">Doğuş University</p>
-                    <p class="experience-date">2021-2023</p>
+                    <h3 class="experience-title">Aspire Alumni</h3>
+                    <p class="experience-organization">Aspire Institute</p>
+                    <p class="experience-location">Massachusetts, United States · Remote</p>
+                    <p class="experience-date">2024</p>
                     <p class="experience-description">
-                        Took active leadership roles in event planning, moderation, and content creation. Organized 20+ technical events, 
-                        developing strong project management, communication, and team coordination skills through hands-on experience.
+                        Selected as scholar for Aspire Leaders Program. Mastered strengths-based leadership, 
+                        digital transformation, and AI applications. Awarded Academic Advancement Grant among 51 winners from 32 countries.
                     </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
                 </div>
 
                 <div class="experience-item">
-                    <h3 class="experience-title">Yetkin Gençler Program Graduate</h3>
-                    <p class="experience-organization">Competent Youth Program</p>
+                    <h3 class="experience-title">Google Professional Project Management Course</h3>
+                    <p class="experience-organization">Google</p>
+                    <p class="experience-location">Istanbul, Turkey · Remote</p>
+                    <p class="experience-date">2024</p>
+                    <p class="experience-description">
+                        Completed a 6-month project management program (10 hrs/week) covering six courses. 
+                        Gained skills in designing, planning, and executing traditional and agile projects, preparing for entry-level roles.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">Yetkin Gencler Program Graduate</h3>
+                    <p class="experience-organization">Yetkin Gencler</p>
+                    <p class="experience-location">Istanbul, Turkey · Remote</p>
                     <p class="experience-date">2022</p>
                     <p class="experience-description">
                         Completed comprehensive 12-week, 88-hour training program focused on 21st-century competencies. 
                         Strengthened critical thinking, problem-solving, teamwork, and presentation skills through intensive 
                         project-based learning workshops covering sustainability and entrepreneurship.
                     </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">IEEE Computer Society Core Team Member</h3>
+                    <p class="experience-organization">Dogus University</p>
+                    <p class="experience-location">Istanbul, Turkey · On-Site</p>
+                    <p class="experience-date">2021-2023</p>
+                    <p class="experience-description">
+                        Took active leadership roles in event planning, moderation, and content creation. Organized 20+ technical events, 
+                        developing strong project management, communication, and team coordination skills through hands-on experience.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary" target="_blank">
+                            <i class="fas fa-briefcase"></i> View Work
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1417,9 +1432,10 @@
  <footer class="footer" id="contact">
     <div class="footer-content">
         <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">Let's Build Something Amazing Together</h3>
+            <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">Let's Build Something Amazing Together!</h3>
             <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
-                Ready to collaborate on cutting-edge AI projects? Whether you're looking for a machine learning engineer, 
+                Ready to collaborate on cutting-edge AI projects?<br>
+                Whether you're looking for a machine learning engineer, 
                 need help with computer vision challenges, or want to discuss innovative solutions - I'm here to help!
             </p>
             
