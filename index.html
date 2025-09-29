@@ -503,16 +503,6 @@
             font-size: 0.9rem;
             font-weight: 500;
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-item {
-            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius-small);
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
             transition: all 0.6s ease;
             position: relative;
             overflow: hidden;
@@ -637,6 +627,46 @@
 
         .footer .social-links {
             margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .footer .social-link {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .footer-button.primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .footer-button:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-button.primary:hover {
+            transform: translateY(-2px) scale(1.05);
         }
 
         .footer-divider {
@@ -652,10 +682,10 @@
             font-size: 0.9rem;
         }
 
-        /* Additional Sections */
+        /* Mini Projects */
         .mini-projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -725,6 +755,50 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certification-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-gradient);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .certification-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .certification-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .certification-link:hover {
+            color: #764ba2;
+            transform: translateX(3px);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .navbar {
@@ -768,6 +842,11 @@
 
             .experience-item::before {
                 left: -2rem;
+            }
+
+            .footer-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -835,8 +914,11 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="#about">About Me</a></li>
             <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#mini-projects">Mini Projects</a></li>
             <li class="nav-item"><a href="#skills">Skills</a></li>
-            <li class="nav-item"><a href="#experience">Experience</a></li>
+            <li class="nav-item"><a href="#professional-experience">Professional Experience</a></li>
+            <li class="nav-item"><a href="#other-experience">Other Experience</a></li>
+            <li class="nav-item"><a href="#certifications">Certifications</a></li>
             <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -845,7 +927,7 @@
     <section class="hero" id="about">
         <div class="hero-content">
             <h1 class="hero-title">Cemre Dag</h1>
-            <p class="hero-subtitle">ML Engineer | Computer Vision & Digital Signal Processing</p>
+            <p class="hero-subtitle">ML Engineer</p>
             <p class="hero-description">
                 A solution-oriented engineer specializing in machine learning, signal processing, and image processing. 
                 Excels in challenging, dynamic environments that push her beyond her comfort zone; while learning, 
@@ -882,18 +964,22 @@
                     I'm a passionate <strong>Machine Learning Engineer</strong> with a deep love for <strong>Computer Vision</strong> and <strong>Digital Signal Processing</strong>. 
                     My journey in AI began with curiosity and has evolved into a commitment to creating solutions that make a real difference.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0;">
-                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px;">
-                        <h4 style="color: #667eea; margin-bottom: 1rem;">🎯 Mission</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Delivering tangible value through innovative AI solutions</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px; border-left: 4px solid #667eea;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem; font-size: 1.2rem;">🎯 Mission</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Delivering tangible value through innovative AI solutions and sustainable development</p>
                     </div>
-                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px;">
-                        <h4 style="color: #667eea; margin-bottom: 1rem;">💡 Passion</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Pushing boundaries in challenging environments</p>
+                    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px; border-left: 4px solid #f093fb;">
+                        <h4 style="color: #f093fb; margin-bottom: 1rem; font-size: 1.2rem;">🌱 Growth Mindset</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Thriving in challenging environments while pushing beyond comfort zones</p>
                     </div>
-                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px;">
-                        <h4 style="color: #667eea; margin-bottom: 1rem;">🌱 Growth</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Continuous learning and sustainable development</p>
+                    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px; border-left: 4px solid #10b981;">
+                        <h4 style="color: #10b981; margin-bottom: 1rem; font-size: 1.2rem;">🌍 Social Impact</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Active volunteer prioritizing projects that protect people, animals, and the environment</p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 15px; border-left: 4px solid #4facfe;">
+                        <h4 style="color: #4facfe; margin-bottom: 1rem; font-size: 1.2rem;">💪 Lifestyle</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Health, nature & technology enthusiast with interests in swimming, yoga, and martial arts</p>
                     </div>
                 </div>
             </div>
@@ -936,7 +1022,7 @@
                 <div class="project-card">
                     <span class="project-status status-current">Educational Project</span>
                     <h3 class="project-title">CV & DSP Practices</h3>
-                    <p class="project-subtitle">Feb 2024 - Present</p>
+                    <p class="project-subtitle">Aug 2024 - Present</p>
                     <p class="project-description">
                         A collection of hands-on exercises in Computer Vision and Digital Signal Processing, designed to be 
                         practical and educational for learning core concepts step by step.
@@ -1091,6 +1177,55 @@
             </div>
         </section>
 
+        <!-- Mini Projects -->
+        <section class="section scroll-fade" id="mini-projects">
+            <h2 class="section-title">Mini Projects & Learning Practices</h2>
+            <div class="mini-projects">
+                <div class="mini-project-card">
+                    <h4>Titanic Survival Prediction</h4>
+                    <p>Comparison of KNN, MLP, and Naive Bayes algorithms for passenger survival prediction. Best performance: KNN (k=11) with 88.2% accuracy.</p>
+                    <a href="https://github.com/gumaruw/Titanic-Survival-Prediction" class="mini-project-link" target="_blank">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>California Housing Price Prediction</h4>
+                    <p>Predicts median house values using regression models including Linear Regression, Random Forest, Gradient Boosting, and XGBoost with hyperparameter tuning.</p>
+                    <a href="https://github.com/gumaruw/House-Price-Prediction" class="mini-project-link" target="_blank">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>Bike Sharing Demand Prediction</h4>
+                    <p>Predicts daily bike rental counts using weather and time features. Gradient Boosting achieved lowest MSE with 55% R² score and 25% improvement over baseline.</p>
+                    <a href="https://github.com/gumaruw/Bike-Sharing-Prediction" class="mini-project-link" target="_blank">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>Cryptocurrency Data Analysis</h4>
+                    <p>Real-time crypto data fetching and analysis using CoinGecko API. Features portfolio tracking, correlation analysis, and automated notifications.</p>
+                    <a href="https://github.com/gumaruw/Crypto-Analysis" class="mini-project-link" target="_blank">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>NYC Taxi Data Analysis</h4>
+                    <p>Comprehensive analysis of 2017 NYC Yellow Taxi trip data focusing on data cleaning, EDA, and predictive insights for improving taxi services.</p>
+                    <a href="https://github.com/gumaruw/NYC-TLC-Data-Analysis" class="mini-project-link" target="_blank">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+                <div class="mini-project-card">
+                    <h4>Waze User Churn Analysis</h4>
+                    <p>Analysis of user behavior patterns and churn prediction for Waze navigation app users, identifying key factors affecting user retention.</p>
+                    <a href="https://github.com/gumaruw/Waze-Churn-Analysis" class="mini-project-link" target="_blank">
+                        <i class="fab fa-github"></i> View Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Technical Skills -->
         <section class="section scroll-fade" id="skills">
             <h2 class="section-title">Technical Expertise</h2>
@@ -1167,44 +1302,62 @@
             </div>
         </section>
 
-        <!-- Mini Projects -->
-        <section class="section scroll-fade">
-            <h2 class="section-title">Mini Projects & Experiments</h2>
-            <div class="mini-projects">
-                <div class="mini-project-card">
-                    <h4>Image Colorization</h4>
-                    <p>Deep learning model to colorize black and white images using CNN architecture</p>
-                    <a href="#" class="mini-project-link">
-                        <i class="fab fa-github"></i> View Project
-                    </a>
+        <!-- Professional Experience -->
+        <section class="section scroll-fade" id="professional-experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3 class="experience-title">Volunteer Data Analyst</h3>
+                    <p class="experience-organization">Superint Software</p>
+                    <p class="experience-date">Jan - April 2025</p>
+                    <p class="experience-description">
+                        Led AI component development for the Nutrivine mobile app (live project). Developed personalized insight engine 
+                        using Gemini API for diet pattern analysis and real-time image processing. Integrated USDA food database for 
+                        accurate nutrition data with offline support using SQLite and cloud-based infrastructure. Achieved 88% accuracy 
+                        in food recognition and 99.7% accuracy in text-based journaling. Reduced query time using TF-IDF, minimized 
+                        storage by 60%, and improved user retention by 28% through data insights.
+                    </p>
                 </div>
-                <div class="mini-project-card">
-                    <h4>Sentiment Analysis Bot</h4>
-                    <p>Twitter sentiment analysis using NLP and machine learning techniques</p>
-                    <a href="#" class="mini-project-link">
-                        <i class="fab fa-github"></i> View Project
-                    </a>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">AI & NLP Intern</h3>
+                    <p class="experience-organization">ÜNLÜ & Co</p>
+                    <p class="experience-date">Jan - Feb 2025</p>
+                    <p class="experience-description">
+                        Developed a RAG-based DocuMind system for financial documents across PDF, Word, tables, and visuals. 
+                        Processed 1,700+ files to generate context-aware responses and reduced research time significantly. 
+                        Applied NLP, IR, BERT, and transformer models to deliver a secure, scalable, and compliance-ready 
+                        system supporting 500–1,000 employees.
+                    </p>
                 </div>
-                <div class="mini-project-card">
-                    <h4>Stock Price Predictor</h4>
-                    <p>LSTM-based model for predicting stock prices with technical indicators</p>
-                    <a href="#" class="mini-project-link">
-                        <i class="fab fa-github"></i> View Project
-                    </a>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">SQL Development Intern</h3>
+                    <p class="experience-organization">FLO Group</p>
+                    <p class="experience-date">Jul - Aug 2024</p>
+                    <p class="experience-description">
+                        Accelerated data analysis and enhanced accuracy by applying advanced SQL techniques and query optimizations 
+                        on large datasets. Improved data processing efficiency and contributed to business intelligence initiatives.
+                    </p>
                 </div>
-                <div class="mini-project-card">
-                    <h4>Face Recognition System</h4>
-                    <p>Real-time face detection and recognition using OpenCV and deep learning</p>
-                    <a href="#" class="mini-project-link">
-                        <i class="fab fa-github"></i> View Project
-                    </a>
+
+                <div class="experience-item">
+                    <h3 class="experience-title">Full Stack Development Intern</h3>
+                    <p class="experience-organization">Satel Informatics Software Education</p>
+                    <p class="experience-date">Jul - Aug 2023</p>
+                    <p class="experience-description">
+                        Developed a tourism-focused news aggregation platform leveraging Twitter data. Implemented dynamic data flow 
+                        and real-time content management with RESTful APIs and SQL databases. Designed responsive, user-friendly 
+                        interfaces using HTML, CSS, and JavaScript. Gained hands-on expertise in backend development, frontend 
+                        integration, and application architecture.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Professional Experience -->
-        <section class="section scroll-fade" id="experience">
-            <h2 class="section-title">Professional Experience</h2>
+        <!-- Other Experience -->
+        <section class="section scroll-fade" id="other-experience">
+            <h2 class="section-title">Leadership & Community Experience</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
                     <h3 class="experience-title">Aspire Leaders Program Scholar</h3>
@@ -1260,273 +1413,224 @@
             </div>
         </section>
 
-        <!-- Soft Skills & Education -->
-        <section class="section scroll-fade" id="education">
-            <h2 class="section-title">Soft Skills & Education</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: linear-gradient(135deg, #f8fafc, #e2e8f0); padding: 2rem; border-radius: 15px; border-left: 4px solid #667eea;">
-                    <h3 style="color: #667eea; margin-bottom: 1rem;">🎯 Soft Skills</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
-                            <strong>Commitment:</strong> Punctual and reliable with deadlines
-                            <span style="position: absolute; left: 0; color: #667eea;">▸</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
-                            <strong>Responsibility:</strong> Own mistakes and take on appropriate duties
-                            <span style="position: absolute; left: 0; color: #667eea;">▸</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
-                            <strong>Proactivity:</strong> First to find solutions and contribute
-                            <span style="position: absolute; left: 0; color: #667eea;">▸</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
-                            <strong>Self Improvement:</strong> Always seeking new knowledge and experiences
-                            <span style="position: absolute; left: 0; color: #667eea;">▸</span>
-                        </li>
-                    </ul>
-                </div>
-                <div style="background: linear-gradient(135deg, #f8fafc, #e2e8f0); padding: 2rem; border-radius: 15px; border-left: 4px solid #f093fb;">
-                    <h3 style="color: #f093fb; margin-bottom: 1rem;">🎓 Education & Certifications</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Computer Engineering</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Doğuş University</p>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">2021 - 2025</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Machine Learning Specialization</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Online Certifications</p>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">2022 - Present</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-content">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                <div>
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">Let's Build Something Amazing Together</h3>
-                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
-                        Ready to collaborate on cutting-edge AI projects? Whether you're looking for a machine learning engineer, 
-                        need help with computer vision challenges, or want to discuss innovative solutions - I'm here to help!
-                    </p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="mailto:cemred.istanbul@gmail.com" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 10px; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2);">
-                            <i class="fas fa-envelope"></i> Get in Touch
-                        </a>
-                        <a href="#resume" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 10px; transition: all 0.3s ease;">
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 1.5rem;">Connect With Me</h4>
-                    <div class="social-links" style="justify-content: flex-start; margin-bottom: 2rem;">
-                        <a href="https://linkedin.com/in/cemred" class="social-link" target="_blank" style="background: rgba(0,119,181,0.2); border-color: rgba(0,119,181,0.3);">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://kaggle.com/gumaruw" class="social-link" target="_blank" style="background: rgba(20,90,50,0.2); border-color: rgba(20,90,50,0.3);">
-                            <i class="fab fa-kaggle"></i>
-                        </a>
-                        <a href="mailto:cemred.istanbul@gmail.com" class="social-link" style="background: rgba(234,67,53,0.2); border-color: rgba(234,67,53,0.3);">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://github.com/gumaruw" class="social-link" target="_blank" style="background: rgba(36,41,46,0.2); border-color: rgba(36,41,46,0.3);">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4facfe;">
-                        <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; margin: 0;">
-                            <strong>💡 Quick Response:</strong> I typically respond to messages within 24 hours. 
-                            For urgent matters, feel free to reach out via LinkedIn!
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-divider"></div>
-            <p class="footer-bottom">
-                © All rights reserved - Cemre Dag 2025 | Crafted with ❤️ for AI Innovation
+ <!-- Footer -->
+ <footer class="footer" id="contact">
+    <div class="footer-content">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">Let's Build Something Amazing Together</h3>
+            <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                Ready to collaborate on cutting-edge AI projects? Whether you're looking for a machine learning engineer, 
+                need help with computer vision challenges, or want to discuss innovative solutions - I'm here to help!
             </p>
+            
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 3rem;">
+                <a href="mailto:cemred.istanbul@gmail.com" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2); font-weight: 500; min-width: 160px; justify-content: center;">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+                <a href="#resume" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; font-weight: 500; min-width: 180px; justify-content: center;">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+
+            <h4 style="color: white; margin-bottom: 1.5rem; text-align: center;">Connect With Me</h4>
+            <div class="social-links" style="justify-content: center; margin-bottom: 3rem;">
+                <a href="https://linkedin.com/in/cemred" class="social-link" target="_blank" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://kaggle.com/gumaruw" class="social-link" target="_blank" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+                <a href="mailto:cemred.istanbul@gmail.com" class="social-link" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/gumaruw" class="social-link" target="_blank" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
-    </footer>
+        
+        <div class="footer-divider"></div>
+        <p class="footer-bottom">
+            © All rights reserved - Cemre Dag 2025 | Crafted with ❤️ for AI Innovation
+        </p>
+    </div>
+</footer>
 
-    <script>
-        // Loading animation
-        window.addEventListener('load', function() {
-            const loading = document.getElementById('loading');
-            setTimeout(() => {
-                loading.classList.add('hidden');
-            }, 1000);
+<script>
+    // Loading animation
+    window.addEventListener('load', function() {
+        const loading = document.getElementById('loading');
+        setTimeout(() => {
+            loading.classList.add('hidden');
+        }, 1000);
+    });
+
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
+    }, observerOptions);
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    // Observe all scroll-fade elements
+    document.querySelectorAll('.scroll-fade').forEach(el => {
+        observer.observe(el);
+    });
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all scroll-fade elements
-        document.querySelectorAll('.scroll-fade').forEach(el => {
-            observer.observe(el);
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for navbar height
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
+    });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for navbar height
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+    // Active navigation highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-item a');
 
-        // Active navigation highlighting
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-item a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Enhanced hover effects for project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
             }
         });
 
-        // Enhanced particle system for hero section
-        function createParticles() {
-            const hero = document.querySelector('.hero');
-            if (!hero) return;
-            
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.style.cssText = `
-                    position: absolute;
-                    width: 2px;
-                    height: 2px;
-                    background: rgba(255,255,255,0.1);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    animation: float ${3 + Math.random() * 4}s ease-in-out infinite;
-                    animation-delay: ${Math.random() * 2}s;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                `;
-                hero.appendChild(particle);
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
             }
+        });
+    });
+
+    // Enhanced hover effects for project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Parallax effect for hero section
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
+    });
 
-        // Add floating animation keyframes
-        const particleStyle = document.createElement('style');
-        particleStyle.textContent += `
-            @keyframes float {
-                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
-                50% { transform: translateY(-20px) rotate(180deg); opacity: 0.3; }
-            }
-        `;
-        document.head.appendChild(particleStyle);
-
-        // Initialize particles
-        createParticles();
-
-        // Typing effect for hero title (subtle enhancement)
-        const heroTitle = document.querySelector('.hero-title');
-        if (heroTitle) {
-            const text = heroTitle.textContent;
-            heroTitle.textContent = '';
-            let i = 0;
-            const typing = setInterval(() => {
-                if (i < text.length) {
-                    heroTitle.textContent += text.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(typing);
-                }
-            }, 100);
+    // Enhanced particle system for hero section
+    function createParticles() {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 50%;
+                pointer-events: none;
+                animation: float ${3 + Math.random() * 4}s ease-in-out infinite;
+                animation-delay: ${Math.random() * 2}s;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+            `;
+            hero.appendChild(particle);
         }
+    }
 
-        // Skills animation on scroll
-        const skillItems = document.querySelectorAll('.skill-item');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.animation = 'skillPop 0.6s ease forwards';
-                        entry.target.style.transform = 'scale(1)';
-                        entry.target.style.opacity = '1';
-                    }, index * 50);
-                }
-            });
-        }, { threshold: 0.5 });
+    // Add floating animation keyframes
+    const particleStyle = document.createElement('style');
+    particleStyle.textContent += `
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.3; }
+        }
+    `;
+    document.head.appendChild(particleStyle);
 
-        skillItems.forEach(skill => {
-            skill.style.opacity = '0';
-            skill.style.transform = 'scale(0.8)';
-            skillObserver.observe(skill);
-        });
+    // Initialize particles
+    createParticles();
 
-        // Add skill animation keyframes
-        const skillStyle = document.createElement('style');
-        skillStyle.textContent = `
-            @keyframes skillPop {
-                0% { opacity: 0; transform: scale(0.8); }
-                50% { transform: scale(1.1); }
-                100% { opacity: 1; transform: scale(1); }
+    // Typing effect for hero title (subtle enhancement)
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+        let i = 0;
+        const typing = setInterval(() => {
+            if (i < text.length) {
+                heroTitle.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typing);
             }
-        `;
-        document.head.appendChild(skillStyle);
+        }, 100);
+    }
 
-        // Project link tracking (analytics ready)
-        document.querySelectorAll('.project-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const projectTitle = this.closest('.project-card').querySelector('.project-title').textContent;
-                console.log(`Project link clicked: ${projectTitle}`);
-                // Add analytics tracking here if needed
-            });
+    // Skills animation on scroll
+    const skillItems = document.querySelectorAll('.skill-item');
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.animation = 'skillPop 0.6s ease forwards';
+                    entry.target.style.transform = 'scale(1)';
+                    entry.target.style.opacity = '1';
+                }, index * 50);
+            }
         });
-    </script>
+    }, { threshold: 0.5 });
+
+    skillItems.forEach(skill => {
+        skill.style.opacity = '0';
+        skill.style.transform = 'scale(0.8)';
+        skillObserver.observe(skill);
+    });
+
+    // Add skill animation keyframes
+    const skillStyle = document.createElement('style');
+    skillStyle.textContent = `
+        @keyframes skillPop {
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(skillStyle);
+
+    // Project link tracking (analytics ready)
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function() {
+            const projectTitle = this.closest('.project-card').querySelector('.project-title').textContent;
+            console.log(`Project link clicked: ${projectTitle}`);
+            // Add analytics tracking here if needed
+        });
+    });
+</script>
 </body>
 </html>
