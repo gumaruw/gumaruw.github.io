@@ -104,32 +104,89 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 0.5rem 2rem;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: none; /* Hidden by default, shows on mobile */
+        }
+
+        .navbar.scrolled .nav-logo {
+            color: var(--text-primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-toggle span {
+            background: var(--text-primary);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         .nav-menu {
             display: flex;
-            gap: 3rem;
+            gap: 0.5rem;
             list-style: none;
             justify-content: center;
-            max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .nav-item a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            padding: 0.8rem 1.5rem;
-            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
             transition: all 0.3s ease;
             position: relative;
             white-space: nowrap;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            display: block;
         }
 
         .nav-item a:hover {
@@ -181,6 +238,25 @@
         .navbar.scrolled .nav-item a.active {
             background: rgba(102, 126, 234, 0.1);
             color: #667eea;
+        }
+
+        /* Mobile Menu Overlay */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Hero Section */
@@ -1084,12 +1160,12 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             margin: 1.5rem 0;
             position: relative;
-            animation: buttonPulse 3s ease-in-out infinite;
+            animation: buttonPulse 2.5s ease-in-out infinite;
         }
 
         /* Hero resume button entrance animation */
         .hero .resume-button {
-            animation: fadeInUp 1s ease-out 0.8s backwards, buttonPulse 3s ease-in-out 2s infinite;
+            animation: fadeInUp 1s ease-out 0.8s backwards, buttonPulse 2.5s ease-in-out 2s infinite;
         }
 
         .resume-button::before {
@@ -1103,26 +1179,60 @@
             border-radius: 14px;
             opacity: 0;
             z-index: -1;
-            animation: pulseRing 3s ease-in-out infinite;
+            animation: pulseRing 2.5s ease-in-out infinite;
         }
 
         @keyframes buttonPulse {
-            0%, 100% {
+            0% {
+                transform: scale(1);
                 box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
             }
-            50% {
-                box-shadow: 0 4px 25px rgba(245, 87, 108, 0.6);
+            5% {
+                transform: scale(1.05);
+                box-shadow: 0 4px 25px rgba(245, 87, 108, 0.7);
+            }
+            10% {
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(245, 87, 108, 0.5);
+            }
+            15% {
+                transform: scale(1.08);
+                box-shadow: 0 4px 30px rgba(245, 87, 108, 0.8);
+            }
+            25% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
             }
         }
 
         @keyframes pulseRing {
-            0%, 100% {
+            0% {
                 opacity: 0;
                 transform: scale(1);
             }
-            50% {
+            5% {
+                opacity: 0.2;
+                transform: scale(1.03);
+            }
+            10% {
+                opacity: 0;
+                transform: scale(1.06);
+            }
+            15% {
                 opacity: 0.3;
-                transform: scale(1.05);
+                transform: scale(1.08);
+            }
+            25% {
+                opacity: 0;
+                transform: scale(1.15);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
             }
         }
 
@@ -1139,19 +1249,93 @@
 
 
 
-        /* Responsive Design */
+        /* Tablet Responsive Design */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .nav-menu {
+                gap: 0.3rem;
+            }
+
+            .nav-item a {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Mobile Responsive Design */
         @media (max-width: 768px) {
             .navbar {
-                position: relative;
-                background: rgba(102, 126, 234, 0.9);
-                border-radius: 0;
-                padding: 1rem;
+                position: fixed;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .nav-logo {
+                display: block;
+            }
+
+            .nav-toggle {
+                display: flex;
             }
 
             .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 280px;
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.98), rgba(118, 75, 162, 0.98));
+                backdrop-filter: blur(20px);
                 flex-direction: column;
-                gap: 1rem;
-                max-width: none;
+                gap: 0;
+                padding: 5rem 0 2rem;
+                margin: 0;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .nav-item a {
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
+                border-radius: 0;
+                width: 100%;
+                color: white;
+            }
+
+            .nav-item a::after {
+                display: none;
+            }
+
+            .nav-item a:hover {
+                background: rgba(255, 255, 255, 0.15);
+                transform: translateY(0);
+                padding-left: 2.5rem;
+            }
+
+            .nav-item a.active {
+                background: rgba(255, 255, 255, 0.2);
+                border-left: 4px solid white;
+            }
+
+            .navbar.scrolled .nav-menu {
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.98), rgba(118, 75, 162, 0.98));
+            }
+
+            .navbar.scrolled .nav-item a {
+                color: white;
             }
 
             .projects-grid.masonry {
@@ -1224,6 +1408,30 @@
             }
         }
 
+        /* Extra Small Mobile Devices */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-menu {
+                width: 100%;
+                right: -100%;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
@@ -1286,17 +1494,28 @@
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="#about">About Me</a></li>
-            <li class="nav-item"><a href="#projects">Projects</a></li>
-            <li class="nav-item"><a href="#mini-projects">Mini Projects</a></li>
-            <li class="nav-item"><a href="#skills">Skills</a></li>
-            <li class="nav-item"><a href="#professional-experience">Experience</a></li>
-            <li class="nav-item"><a href="#other-experience">Other Experience</a></li>
-            <li class="nav-item"><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#about" class="nav-logo">CD</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about">About Me</a></li>
+                <li class="nav-item"><a href="#projects">Projects</a></li>
+                <li class="nav-item"><a href="#mini-projects">Mini Projects</a></li>
+                <li class="nav-item"><a href="#skills">Skills</a></li>
+                <li class="nav-item"><a href="#professional-experience">Experience</a></li>
+                <li class="nav-item"><a href="#other-experience">Other Experience</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -1382,7 +1601,7 @@
                         <li>Implemented CHROM, POS, and GREEN algorithms for robust signal extraction</li>
                         <li>Achieved 6.5% error rate improvement through hybrid algorithm design</li>
                         <li>Advanced temporal filtering and multi-ROI processing pipeline</li>
-                        <li>Signal quality assessment and confidence-weighted estimation</li>
+                        
                     </ul>
                     <div class="tech-stack">
                         <span class="tech-tag">OpenCV</span>
@@ -1469,8 +1688,7 @@
                     <p class="project-subtitle">Jan - Feb 2025</p>
                     <p class="project-description">
                         Built a secure, <strong>enterprise-grade RAG system</strong> for financial document analysis. 
-                        Designed to handle diverse document formats while ensuring full data privacy and regulatory compliance 
-                        for financial institutions.
+                    
                     </p>
                     <ul class="project-achievements">
                         <li>Processed 1,700+ internal documents across PDF, Word, and table formats</li>
@@ -1925,13 +2143,60 @@
         observer.observe(el);
     });
 
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const navLinks = document.querySelectorAll('.nav-item a');
+
+    function closeMenu() {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+        navToggle.classList.add('active');
+        navMenu.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            if (navMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking on overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMenu);
+        }
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    }
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for navbar height
+                const offsetTop = target.offsetTop - 60; // Account for navbar height
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -1942,7 +2207,6 @@
 
     // Active navigation highlighting
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-item a');
 
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
@@ -1957,7 +2221,7 @@
         
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 80;
             if (scrollY >= sectionTop) {
                 current = section.getAttribute('id');
             }
