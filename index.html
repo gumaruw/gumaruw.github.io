@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cemre Dag | ML Engineer</title>
-    <meta name="description" content="A solution-oriented engineer specializing in machine learning, signal processing, and image processing. Passionate about delivering tangible value through innovative AI solutions.">
-    <meta name="keywords" content="Machine Learning, Computer Vision, Signal Processing, AI, Deep Learning, Python, TensorFlow, OpenCV">
+    <title>Cemre Dag | Computer Vision Engineer - Medical AI & Signal Processing</title>
+    <meta name="description" content="Computer Vision engineer specializing in medical imaging and production-ready ML systems. 95%+ accuracy, deployed solutions, European timezone.">
+    <meta name="keywords" content="Computer Vision, Machine Learning, Medical AI, Signal Processing, Production ML, Deep Learning, Python, TensorFlow, OpenCV">
     <meta name="author" content="Cemre Dag">
     
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Cemre Dag | ML Engineer">
-    <meta property="og:description" content="A solution-oriented engineer specializing in machine learning, signal processing, and image processing.">
+    <meta property="og:title" content="Cemre Dag | Computer Vision Engineer">
+    <meta property="og:description" content="Production-ready CV systems | Medical AI specialist | 95%+ accuracy">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gumaruw.github.io">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cemre Dag | ML Engineer">
-    <meta name="twitter:description" content="A solution-oriented engineer specializing in machine learning, signal processing, and image processing.">
+    <meta name="twitter:title" content="Cemre Dag | Computer Vision Engineer">
+    <meta name="twitter:description" content="Production-ready CV systems | Medical AI specialist | 95%+ accuracy">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,7 +24,11 @@
     
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --primary-blue: #2563eb;
+            --secondary-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --dark: #0f172a;
+            --primary-gradient: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -323,15 +327,19 @@
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             background: linear-gradient(45deg, #ffffff, #f0f8ff, #e6f3ff, #ffffff);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradientShift 4s ease-in-out infinite, fadeInUp 1s ease-out 0.2s backwards;
+            line-height: 1.2;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes gradientShift {
@@ -340,12 +348,15 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
             font-weight: 500;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
-            line-height: 1.8;
+            line-height: 1.7;
             animation: fadeInUp 1s ease-out 0.4s backwards;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-description {
@@ -457,41 +468,40 @@
 
         /* Main Content */
         .main-content {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #fafbfc 0%, #f8fafc 100%);
+            padding: 0;
+            background: var(--light-bg);
         }
 
         .section {
-            margin-bottom: 6rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease forwards;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 3.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 5rem 2rem;
             position: relative;
             overflow: hidden;
         }
 
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Alternating section backgrounds */
+        .section:nth-child(odd) {
+            background: #ffffff;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #fafbfc 0%, #f8fafc 100%);
+        }
+
         .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
-            opacity: 0.8;
+            display: none;
         }
 
         .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+            transform: none;
         }
 
         .section:nth-child(2) { animation-delay: 0.2s; }
@@ -559,10 +569,16 @@
 
         .projects-grid.masonry {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 1200px) {
+            .projects-grid.masonry {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .projects-grid.masonry .project-card:nth-child(1) {
@@ -744,21 +760,17 @@
         /* Skills Section */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1.2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .skill-category:nth-child(1),
         .skill-category:nth-child(2),
-        .skill-category:nth-child(3) {
-            grid-column: span 2;
-        }
-
-        .skill-category:nth-child(4),
-        .skill-category:nth-child(5) {
-            grid-column: span 3;
+        .skill-category:nth-child(3),
+        .skill-category:nth-child(4) {
+            grid-column: span 1;
         }
 
         .skill-category {
@@ -1338,6 +1350,24 @@
                 color: white;
             }
 
+            .hero-title {
+                font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem !important;
+                line-height: 1.6;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-container {
+                padding: 0 1rem;
+            }
+
             .projects-grid.masonry {
                 grid-template-columns: 1fr;
                 max-width: none;
@@ -1406,6 +1436,19 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .main-content {
+                padding: 0;
+            }
+
+            .section-container {
+                padding: 0 1rem;
+            }
+
+            .collapse-toggle {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
         }
 
         /* Extra Small Mobile Devices */
@@ -1428,13 +1471,110 @@
             }
 
             .section {
-                padding: 2rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
         }
 
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Collapsible Section Styles */
+        .collapsible-section {
+            margin-top: 2rem;
+        }
+
+        .collapse-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        .collapse-toggle:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(139, 92, 246, 0.2));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .collapse-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .collapse-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+
+        /* Sticky CTA Button */
+        .sticky-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .sticky-cta-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--primary-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(37, 99, 235, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .sticky-cta-button {
+                padding: 0.9rem 1.3rem;
+                font-size: 0.95rem;
+            }
         }
 
         /* Loading animation */
@@ -1507,32 +1647,51 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#about">About Me</a></li>
-                <li class="nav-item"><a href="#projects">Projects</a></li>
-                <li class="nav-item"><a href="#mini-projects">Mini Projects</a></li>
-                <li class="nav-item"><a href="#skills">Skills</a></li>
+                <li class="nav-item"><a href="#hero">Home</a></li>
+                <li class="nav-item"><a href="#featured-projects">Projects</a></li>
+                <li class="nav-item"><a href="#approach">Approach</a></li>
                 <li class="nav-item"><a href="#professional-experience">Experience</a></li>
-                <li class="nav-item"><a href="#other-experience">Other Experience</a></li>
+                <li class="nav-item"><a href="#skills">Skills</a></li>
                 <li class="nav-item"><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="about">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="welcome-badge" style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; border: 1px solid rgba(255,255,255,0.2);">
-                <span style="color: white; font-size: 0.9rem; font-weight: 500;">🚀 Welcome to my portfolio!</span>
-            </div>
-            <h1 class="hero-title" style="font-size: clamp(2rem, 6vw, 3.5rem);">ML Engineer</h1>
-            <p class="hero-description">
-                My name is <span class="highlight-name">Cemre Dag</span>, and I'm a machine learning engineer that loves to connect with people and try new experiences. 
-                My main stack is Python, TensorFlow, OpenCV, and deep learning.
+            <h1 class="hero-title">Your Computer Vision Models Deserve<br>to See the Light of Day</h1>
+            <p class="hero-subtitle">
+                Most ML models die in notebooks. I build production-ready computer vision systems that ship—with 90%+ accuracy, clean code, and documentation teams actually use.
             </p>
-            <a href="#resume" class="resume-button">
-                <i class="fas fa-download"></i>
-                Download Resume
-            </a>
+            
+            <!-- Dual CTA Buttons -->
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+                <a href="#featured-projects" class="project-link primary" style="padding: 1rem 2rem; font-size: 1.05rem;">
+                    View My Work
+                </a>
+                <a href="#resume" class="resume-button" style="margin: 0;">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
+            </div>
+            
+            <!-- Metrics Bar -->
+            <div style="display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem;">95%+</div>
+                    <div style="font-size: 0.95rem; opacity: 0.9;">Model Accuracy</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #4facfe; margin-bottom: 0.5rem;">1,700+</div>
+                    <div style="font-size: 0.95rem; opacity: 0.9;">Documents Processed</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #f5576c; margin-bottom: 0.5rem;">5</div>
+                    <div style="font-size: 0.95rem; opacity: 0.9;">Deployed Systems</div>
+                </div>
+            </div>
+            
             <div class="social-links">
                 <a href="https://linkedin.com/in/cemred" class="social-link" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
@@ -1551,227 +1710,209 @@
     </section>
 
     <main class="main-content">
-        <!-- About Me Section -->
-        <section class="section scroll-fade" id="about-detail">
-            <h2 class="section-title">About Me</h2>
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 3rem; text-align: center;">
-                    I'm a passionate <strong>Machine Learning Engineer</strong> with a deep love for <strong>Computer Vision</strong> and <strong>Digital Signal Processing</strong>. 
-                    My journey in AI began with curiosity and has evolved into a commitment to creating solutions that make a real difference.
+        <!-- Featured Projects Section -->
+        <section class="section scroll-fade" id="featured-projects">
+            <div class="section-container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Building AI solutions across healthcare, enterprise, and research
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0;">
-                    <div class="about-card" style="text-align: center; padding: 2.5rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; border-left: 4px solid #667eea; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 style="color: #667eea; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Mission</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Delivering tangible value through innovative AI solutions and sustainable development.</p>
+                <div class="projects-grid masonry">
+                <div class="project-card">
+                    <span class="project-status status-completed">Medical AI</span>
+                    <h3 class="project-title">SifAI - Skin Cancer Detection System</h3>
+                    <p class="project-subtitle">Feb - Jun 2025</p>
+                    <p class="project-description">
+                        Dual-model AI system achieving clinical-grade accuracy in skin cancer detection. Built segmentation and classification pipeline processing 10,000+ dermoscopic images with advanced data augmentation.
+                    </p>
+                    <ul class="project-achievements">
+                        <li><strong>95.83%</strong> Segmentation Accuracy</li>
+                        <li><strong>84.95%</strong> IoU Score</li>
+                        <li><strong>89.55%</strong> Classification Accuracy</li>
+                        <li><strong>10,000+</strong> Images Processed</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">U-Net</span>
+                        <span class="tech-tag">ResNet50</span>
+                        <span class="tech-tag">Medical AI</span>
+                        <span class="tech-tag">OpenCV</span>
                     </div>
-                    <div class="about-card" style="text-align: center; padding: 2.5rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; border-left: 4px solid #f093fb; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 style="color: #e879f9; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Growth Mindset</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Thriving in challenging, dynamic environments while pushing beyond comfort zones.</p>
-                    </div>
-                    <div class="about-card" style="text-align: center; padding: 2.5rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; border-left: 4px solid #10b981; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 style="color: #10b981; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Social Impact</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Active volunteer prioritizing projects that protect people, animals, and the environment.</p>
-                    </div>
-                    <div class="about-card" style="text-align: center; padding: 2.5rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; border-left: 4px solid #4facfe; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 style="color: #4facfe; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Lifestyle</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Health, nature & technology enthusiast with interests in swimming, yoga, and martial arts. Often reads two books at once.</p>
-                    </div>
-                    <div class="about-card" style="text-align: center; padding: 2.5rem; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; border-left: 4px solid #764ba2; grid-column: span 2; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 style="color: #764ba2; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Approach</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Works experimentally and iteratively — following a spiral-model approach — so every prototype teaches her something new and brings the project closer to a reliable, production-ready solution.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/gumaruw/Skin-Cancer-SifAI" class="project-link primary" target="_blank">
+                            <i class="fab fa-github"></i> View Model
+                        </a>
+                        <a href="https://github.com/gumaruw/Skin-Cancer-Binary" class="project-link secondary" target="_blank">
+                            <i class="fas fa-book"></i> Read Case Study
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Current Research -->
-        <section class="section scroll-fade" id="projects">
-            <h2 class="section-title">Current Research</h2>
-            <div class="projects-grid">
                 <div class="project-card">
-                    <span class="project-status status-current">Research in Progress</span>
+                    <span class="project-status status-completed">Heart Rate Monitoring</span>
                     <h3 class="project-title">VitaLight</h3>
                     <p class="project-subtitle">Sep 2025 - Present</p>
                     <p class="project-description">
-                        Developing an advanced system that <strong>detects heart rate from facial video using rPPG</strong>, 
-                        analyzing subtle color changes in skin caused by blood circulation. Following the Spiral Model methodology for 
-                        iterative research and development.
+                        Advanced contactless heart rate monitoring system using rPPG. Analyzes subtle facial color changes from video to extract cardiovascular signals with medical-grade accuracy.
                     </p>
                     <ul class="project-achievements">
-                        <li>Implemented CHROM, POS, and GREEN algorithms for robust signal extraction</li>
-                        <li>Achieved 6.5% error rate improvement through hybrid algorithm design</li>
-                        <li>Advanced temporal filtering and multi-ROI processing pipeline</li>
-                        
+                        <li><strong>6.5%</strong> Error Rate Improvement</li>
+                        <li><strong>3</strong> Hybrid Algorithms (CHROM, POS, GREEN)</li>
+                        <li>Multi-ROI Signal Processing</li>
+                        <li>Real-time Detection</li>
                     </ul>
                     <div class="tech-stack">
                         <span class="tech-tag">OpenCV</span>
                         <span class="tech-tag">MediaPipe</span>
-                        <span class="tech-tag">SciPy</span>
-                        <span class="tech-tag">NumPy</span>
                         <span class="tech-tag">Signal Processing</span>
-                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">SciPy</span>
+                        <span class="tech-tag">rPPG</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/gumaruw/VitaLight" class="project-link primary" target="_blank">
                             <i class="fab fa-github"></i> View Research
                         </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-status status-current">Educational Project</span>
-                    <h3 class="project-title">CV & DSP Practices</h3>
-                    <p class="project-subtitle">Aug 2025 - Present</p>
-                    <p class="project-description">
-                        <strong>A collection of hands-on exercises</strong> in Computer Vision and Digital Signal Processing, designed to be 
-                        practical and educational for learning core concepts step by step.
-                    </p>
-                    <ul class="project-achievements">
-                        <li>Practical mini-projects covering fundamental CV and DSP concepts</li>
-                        <li>Educational resource for learning signal processing techniques</li>
-                        <li>Step-by-step implementations with clear documentation</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">NumPy</span>
-                        <span class="tech-tag">SciPy</span>
-                        <span class="tech-tag">DSP</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/gumaruw/cv-and-dsp-practices" class="project-link primary" target="_blank">
-                            <i class="fab fa-github"></i> Explore Practices
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Major Projects -->
-        <section class="section scroll-fade">
-            <h2 class="section-title">Major Projects</h2>
-            <div class="projects-grid masonry">
-                <div class="project-card">
-                    <span class="project-status status-completed">Thesis Project</span>
-                    <h3 class="project-title">SifAI</h3>
-                    <p class="project-subtitle">Feb - Jun 2025</p>
-                    <p class="project-description">
-                        Developed a <strong>dual-model AI system for skin cancer detection</strong> as part of SifAI (Brain Tumor & Skin Cancer Analysis).
-                    </p>
-                    <ul class="project-achievements">
-                        <li>Built U-Net segmentation model with 95.83% pixel-level accuracy and 84.95% IoU</li>
-                        <li>Trained ResNet50-based classifier with 89.55% accuracy and 93.88% AUC</li>
-                        <li>Processed 10,000+ HAM10000 dermoscopic images with advanced augmentation</li>
-                        <li>Collaborated in 5-person team integrating multiple AI modules</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Keras</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">U-Net</span>
-                        <span class="tech-tag">ResNet50</span>
-                        <span class="tech-tag">Medical AI</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/gumaruw/Skin-Cancer-SifAI" class="project-link primary" target="_blank">
-                            <i class="fab fa-github"></i> Segmentation Model
-                        </a>
-                        <a href="https://github.com/gumaruw/Skin-Cancer-Binary" class="project-link secondary" target="_blank">
-                            <i class="fab fa-github"></i> Classification Model
+                        <a href="https://github.com/gumaruw/VitaLight" class="project-link secondary" target="_blank">
+                            <i class="fas fa-play"></i> Live Demo
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <span class="project-status status-completed">Enterprise RAG System</span>
-                    <h3 class="project-title">DocuMind</h3>
+                    <span class="project-status status-completed">Enterprise AI</span>
+                    <h3 class="project-title">DocuMind - Enterprise RAG System</h3>
                     <p class="project-subtitle">Jan - Feb 2025</p>
                     <p class="project-description">
-                        Built a secure, <strong>enterprise-grade RAG system</strong> for financial document analysis. 
-                    
+                        Secure, enterprise-grade RAG system for financial document analysis. Deployed locally ensuring full data privacy and regulatory compliance while processing diverse document formats at scale.
                     </p>
                     <ul class="project-achievements">
-                        <li>Processed 1,700+ internal documents across PDF, Word, and table formats</li>
-                        <li>Achieved 70% accuracy in Q&A tasks and 65% reduction in manual research time</li>
-                        <li>Implemented vector database infrastructure for semantic search</li>
-                        <li>Deployed locally ensuring full data privacy and regulatory compliance</li>
-                        <li>Delivered scalable architecture supporting 500–1,000 employees</li>
+                        <li><strong>1,700+</strong> Documents Processed</li>
+                        <li><strong>65%</strong> Time Reduction</li>
+                        <li><strong>70%</strong> Q&A Accuracy</li>
+                        <li><strong>500-1,000</strong> Users Supported</li>
                     </ul>
                     <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
                         <span class="tech-tag">LangChain</span>
                         <span class="tech-tag">BERT</span>
-                        <span class="tech-tag">Transformers</span>
                         <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">Vector DB</span>
+                        <span class="tech-tag">NLP</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/gumaruw/DocuMind" class="project-link primary" target="_blank">
                             <i class="fab fa-github"></i> View Project
                         </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-status status-completed">Research Project</span>
-                    <h3 class="project-title">SignFlow</h3>
-                    <p class="project-subtitle">Oct 2024 - Feb 2025</p>
-                    <p class="project-description">
-                        Led development of a <strong>real-time ASL recognition</strong> system to support communication 
-                        for hearing-impaired individuals. Managed full project lifecycle including team coordination and 
-                        technical implementation.
-                    </p>
-                    <ul class="project-achievements">
-                        <li>Achieved 92%+ validation accuracy in letter recognition</li>
-                        <li>Preprocessed and normalized 10,000+ image samples</li>
-                        <li>Designed CNN architecture optimized for real-time performance</li>
-                        <li>Supported dynamic gestures including complex letters like J and Z</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">CNN</span>
-                        <span class="tech-tag">Computer Vision</span>
-                        <span class="tech-tag">Real-time Processing</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/gumaruw/SignFlow" class="project-link primary" target="_blank">
-                            <i class="fab fa-github"></i> View Project
+                        <a href="https://github.com/gumaruw/DocuMind" class="project-link secondary" target="_blank">
+                            <i class="fas fa-sitemap"></i> Architecture
                         </a>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <span class="project-status status-completed">Creative Technology</span>
-                    <h3 class="project-title">Creative Coding with P5.js</h3>
-                    <p class="project-subtitle">Feb 2024 - Sep 2024</p>
-                    <p class="project-description">
-                        Explored the intersection of art and technology through <strong>algorithmic design</strong> and interactive visualizations. 
-                        
-                    </p>
-                    <ul class="project-achievements">
-                        <li>Developed 30+ interactive, algorithm-driven sketches on Open Processing</li>
-                        <li>Applied computational geometry and mathematical models for scalable outputs, parametric visual systems</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">P5.js</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Generative Art</span>
-                        <span class="tech-tag">Interactive Design</span>
-                        <span class="tech-tag">Data Visualization</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/gumaruw/creative-coding-p5js" class="project-link primary" target="_blank">
-                            <i class="fab fa-github"></i> View Sketches
-                        </a>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
 
-        <!-- Mini Projects -->
-        <section class="section scroll-fade" id="mini-projects">
-            <h2 class="section-title">Mini Projects</h2>
-            <div class="mini-projects">
+        <!-- Approach Section -->
+        <section class="section scroll-fade" id="approach">
+            <div class="section-container">
+                <h2 class="section-title">How I Work</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Iterative development that bridges research and production
+                </p>
+                <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1)); padding: 3rem; border-radius: 20px; border-left: 5px solid var(--primary-blue);">
+                    <h3 style="color: var(--primary-blue); font-size: 1.4rem; margin-bottom: 1.5rem; font-weight: 600;">
+                        <i class="fas fa-sync-alt" style="margin-right: 0.5rem;"></i> Research to Production Pipeline
+                    </h3>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        I work experimentally and iteratively using agile methodologies. Every prototype is a learning opportunity that brings the project closer to a reliable, production-ready solution. This approach ensures rapid validation, continuous improvement, and systems that actually deploy.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                        My focus is on delivering <strong>tangible value</strong>—not just impressive metrics on test sets, but models that work in real-world conditions with clean code, comprehensive documentation, and maintainable architecture.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Additional Projects (Collapsible) -->
+        <section class="section scroll-fade" id="additional-projects">
+            <div class="section-container">
+                <h2 class="section-title">Additional Projects</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Explore more projects including ASL recognition, creative coding, and data analysis
+                </p>
+            
+            <button class="collapse-toggle" onclick="toggleCollapse('other-projects')">
+                <span>Show More Projects</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            
+            <div class="collapsible-content" id="other-projects">
+                <div style="padding: 2rem 0;">
+                    <div class="projects-grid" style="margin-bottom: 3rem;">
+                        <div class="project-card" style="min-height: auto;">
+                            <span class="project-status status-completed">Computer Vision</span>
+                            <h3 class="project-title">SignFlow - ASL Recognition System</h3>
+                            <p class="project-subtitle">Oct 2024 - Feb 2025</p>
+                            <p class="project-description">
+                                Real-time American Sign Language recognition system supporting communication for hearing-impaired individuals. Achieved 92%+ validation accuracy with CNN architecture optimized for real-time performance including complex dynamic gestures.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">CNN</span>
+                                <span class="tech-tag">Computer Vision</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/gumaruw/SignFlow" class="project-link primary" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" style="min-height: auto;">
+                            <span class="project-status status-completed">Creative Coding</span>
+                            <h3 class="project-title">Creative Coding with P5.js</h3>
+                            <p class="project-subtitle">Feb 2024 - Sep 2024</p>
+                            <p class="project-description">
+                                Explored computational art through algorithmic design and interactive visualizations. Developed 30+ interactive sketches applying computational geometry and parametric visual systems.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">P5.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Generative Art</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/gumaruw/creative-coding-p5js" class="project-link primary" target="_blank">
+                                    <i class="fab fa-github"></i> View Sketches
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" style="min-height: auto;">
+                            <span class="project-status status-completed">Educational</span>
+                            <h3 class="project-title">CV & DSP Practices</h3>
+                            <p class="project-subtitle">Aug 2025 - Present</p>
+                            <p class="project-description">
+                                Educational collection of hands-on exercises in Computer Vision and Digital Signal Processing. Practical mini-projects covering fundamental concepts with step-by-step implementations and clear documentation.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">SciPy</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/gumaruw/cv-and-dsp-practices" class="project-link primary" target="_blank">
+                                    <i class="fab fa-github"></i> Explore Practices
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-primary); text-align: center;">Mini Projects</h3>
+                    <div class="mini-projects">
                 <div class="mini-project-card">
                     <h4>Titanic Survival Prediction</h4>
                     <p>Comparison of KNN, MLP, and Naive Bayes algorithms for passenger survival prediction. Best performance: KNN (k=11) with 88.2% accuracy.</p>
@@ -1814,96 +1955,88 @@
                         <i class="fab fa-github"></i> View Project
                     </a>
                 </div>
+                </div>
+                </div>
+            </div>
             </div>
         </section>
 
         <!-- Technical Skills -->
         <section class="section scroll-fade" id="skills">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
+            <div class="section-container">
+                <h2 class="section-title">Technical Skills</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Comprehensive ML stack for production-ready systems
+                </p>
+                <div class="skills-container">
                 <div class="skill-category">
                     <h3><i class="fas fa-brain" style="color: #667eea; margin-right: 0.5rem;"></i>Machine Learning & AI</h3>
                     <div class="skill-list">
-                        <span class="skill-item">TensorFlow</span>
-                        <span class="skill-item">PyTorch</span>
-                        <span class="skill-item">Keras</span>
+                        <span class="skill-item" title="5 deployed models">TensorFlow</span>
+                        <span class="skill-item" title="Research & prototyping">PyTorch</span>
+                        <span class="skill-item" title="Medical imaging focus">Keras</span>
                         <span class="skill-item">Scikit-learn</span>
                         <span class="skill-item">XGBoost</span>
-                        <span class="skill-item">LightGBM</span>
                         <span class="skill-item">CNN</span>
                         <span class="skill-item">U-Net</span>
-                        <span class="skill-item">Transformers</span>
-                        <span class="skill-item">ResNet50</span>
+                        <span class="skill-item">ResNet</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-eye" style="color: #f093fb; margin-right: 0.5rem;"></i>Computer Vision & NLP</h3>
+                    <h3><i class="fas fa-eye" style="color: #f093fb; margin-right: 0.5rem;"></i>Computer Vision</h3>
                     <div class="skill-list">
-                        <span class="skill-item">OpenCV</span>
-                        <span class="skill-item">MediaPipe</span>
-                        <span class="skill-item">RAG</span>
+                        <span class="skill-item" title="Expert, medical imaging focus">OpenCV</span>
+                        <span class="skill-item" title="Real-time processing">MediaPipe</span>
                         <span class="skill-item">Signal Processing</span>
                         <span class="skill-item">Image Segmentation</span>
                         <span class="skill-item">Object Detection</span>
-                        <span class="skill-item">NLP Pipelines</span>
+                        <span class="skill-item">Medical Imaging</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-code" style="color: #4facfe; margin-right: 0.5rem;"></i>Programming & Tools</h3>
+                    <h3><i class="fas fa-code" style="color: #4facfe; margin-right: 0.5rem;"></i>Programming</h3>
                     <div class="skill-list">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Java</span>
+                        <span class="skill-item" title="Primary language, 3+ years">Python</span>
                         <span class="skill-item">SQL</span>
-                        <span class="skill-item">CUDA</span>
                         <span class="skill-item">Git/GitHub</span>
-                        <span class="skill-item">MLflow</span>
-                        <span class="skill-item">CI/CD</span>
                         <span class="skill-item">RESTful APIs</span>
+                        <span class="skill-item">CI/CD</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-line" style="color: #10b981; margin-right: 0.5rem;"></i>Data & Visualization</h3>
+                    <h3><i class="fas fa-database" style="color: #10b981; margin-right: 0.5rem;"></i>Data & NLP</h3>
                     <div class="skill-list">
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Tableau</span>
+                        <span class="skill-item">BERT</span>
+                        <span class="skill-item">Transformers</span>
+                        <span class="skill-item">LangChain</span>
+                        <span class="skill-item">RAG</span>
                         <span class="skill-item">NumPy</span>
                         <span class="skill-item">Pandas</span>
                         <span class="skill-item">SciPy</span>
-                        <span class="skill-item">P5.js</span>
-                        <span class="skill-item">Data Analysis</span>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-cloud" style="color: #764ba2; margin-right: 0.5rem;"></i>Cloud & Infrastructure</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Google Cloud Platform</span>
-                        <span class="skill-item">Vector Databases</span>
-                        <span class="skill-item">Model Deployment</span>
-                        <span class="skill-item">Scalable Architecture</span>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
 
         <!-- Professional Experience -->
         <section class="section scroll-fade" id="professional-experience">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-timeline">
+            <div class="section-container">
+                <h2 class="section-title">Experience</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Building AI solutions across healthcare, enterprise, and research
+                </p>
+                <div class="experience-timeline">
                 <div class="experience-item">
                     <h3 class="experience-title">Volunteer Data Analyst</h3>
                     <p class="experience-organization">Superint Software</p>
                     <p class="experience-location">Istanbul, Turkey · Hybrid</p>
-                    <p class="experience-date">Jan - April 2025</p>
+                    <p class="experience-date">Jan - Apr 2025</p>
                     <p class="experience-description">
-                        <li>Led AI component development for the Nutrivine mobile app (live project)</li>
-                        <li>Developed personalized insight engine using Gemini API for diet pattern analysis and real-time image processing</li>
-                        <li>Integrated USDA food database for accurate data with offline support using SQLite and cloud-based infrastructure</li> 
-                        <li>Achieved 88% accuracy in food recognition and 99.7% accuracy in text-based journaling</li> 
-                        <li>Reduced query time using TF-IDF, minimized storage by 60%, and improved user retention</li>
+                        Led AI component development for Nutrivine mobile app. Built personalized insight engine using Gemini API achieving 88% food recognition accuracy and 99.7% text-based journaling accuracy. Optimized query time with TF-IDF, reduced storage by 60%, and improved user retention.
                     </p>
                 </div>
 
@@ -1913,9 +2046,7 @@
                     <p class="experience-location">Istanbul, Turkey · Hybrid</p>
                     <p class="experience-date">Jan - Feb 2025</p>
                     <p class="experience-description">
-                        <li>Developed a RAG-based DocuMind system for 1,700+ financial documents across PDF, Word, tables, and visuals</li> 
-                        <li>Applied NLP, IR, BERT, and transformer models to deliver a secure, scalable, and compliance-ready 
-                        system supporting 500–1,000 employees</li>
+                        Developed RAG-based DocuMind system for 1,700+ financial documents. Applied NLP, IR, and transformer models to deliver a secure, scalable system supporting 500–1,000 employees with full regulatory compliance.
                     </p>
                 </div>
 
@@ -1925,9 +2056,7 @@
                     <p class="experience-location">Istanbul, Turkey · Remote</p>
                     <p class="experience-date">Jul - Aug 2024</p>
                     <p class="experience-description">
-                        <li>Accelerated data analysis and enhanced accuracy by applying advanced SQL techniques and query optimizations 
-                        on large datasets</li>
-                        <li>Improved data processing efficiency and contributed to business intelligence initiatives</li>
+                        Accelerated data analysis through advanced SQL techniques and query optimization. Enhanced data processing efficiency and contributed to business intelligence initiatives on large-scale datasets.
                     </p>
                 </div>
 
@@ -1937,128 +2066,95 @@
                     <p class="experience-location">Antalya, Turkey · Remote</p>
                     <p class="experience-date">Jul - Aug 2023</p>
                     <p class="experience-description">
-                        <li>Developed a tourism-focused news aggregation platform leveraging Twitter data</li> 
-                        <li>Implemented dynamic data flow 
-                        and real-time content management with RESTful APIs and SQL databases</li> 
-                        <li>Designed responsive, user-friendly 
-                        interfaces using HTML, CSS, and JavaScript</li> 
-                        <li>Gained hands-on expertise in backend development, frontend 
-                        integration, and application architecture</li>
+                        Developed tourism-focused news aggregation platform leveraging Twitter data. Implemented dynamic data flow with RESTful APIs, SQL databases, and responsive frontend using HTML, CSS, and JavaScript.
                     </p>
                 </div>
             </div>
+            </div>
         </section>
 
-        <!-- Other Experience -->
+        <!-- Leadership & Certifications (Collapsible) -->
         <section class="section scroll-fade" id="other-experience">
-            <h2 class="section-title">Leadership & Community Experience</h2>
-            <div class="experience-timeline">
+            <div class="section-container">
+                <h2 class="section-title">Leadership & Certifications</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Community leadership and professional development programs
+                </p>
+            
+            <!-- Show top 2 by default -->
+            <div class="collapsible-content" id="more-leadership">
+                <div class="experience-timeline" style="padding-top: 2rem;">
+                <div class="experience-item">
+                    <h3 class="experience-title">Aspire Alumni</h3>
+                    <p class="experience-organization">Aspire Institute</p>
+                    <p class="experience-date">2024</p>
+                    <p class="experience-description">
+                        Selected as scholar for Aspire Leaders Program. Awarded Academic Advancement Grant among 51 winners from 32 countries.
+                    </p>
+                </div>
+
+            <div class="experience-timeline" style="margin-bottom: 2rem;">
                 <div class="experience-item">
                     <h3 class="experience-title">McKinsey Forward Alumni</h3>
                     <p class="experience-organization">McKinsey & Company</p>
-                    <p class="experience-location">New York, United States · Remote</p>
                     <p class="experience-date">2025</p>
                     <p class="experience-description">
-                        <li>Completed the intensive 10-week program, demonstrating analytical rigor, strategic thinking, and growth mindset</li>
-                        <li>Developed critical business skills in team dynamics, communication, and professional development</li>
+                        Completed intensive 10-week program demonstrating analytical rigor, strategic thinking, and growth mindset.
                     </p>
-                    <div class="project-links" style="margin-top: 1rem;">
-                        <a href="#" class="mini-project-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
                 </div>
+            </div>
+
+            <button class="collapse-toggle" onclick="toggleCollapse('more-leadership')">
+                <span>Show More</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
 
                 <div class="experience-item">
                     <h3 class="experience-title">Google Developer Student Clubs Co-Lead</h3>
                     <p class="experience-organization">Dogus University</p>
-                    <p class="experience-location">Istanbul, Turkey · On-Site</p>
                     <p class="experience-date">2025</p>
                     <p class="experience-description">
-                        <li>Managed event planning and coordination, optimizing community operations and learning outcomes</li>
-                        <li>Led initiatives to foster technical skills development and community engagement among students</li>
+                        Managed event planning and coordination, optimizing community operations and learning outcomes among students.
                     </p>
-                    <div class="project-links" style="margin-top: 1rem;">
-                        <a href="#" class="mini-project-link" target="_blank">
-                            <i class="fas fa-briefcase"></i> View Work
-                        </a>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="experience-title">Aspire Alumni</h3>
-                    <p class="experience-organization">Aspire Institute</p>
-                    <p class="experience-location">Massachusetts, United States · Remote</p>
-                    <p class="experience-date">2024</p>
-                    <p class="experience-description">
-                        <li>Selected as scholar for Aspire Leaders Program. Mastered strengths-based leadership, digital transformation, and AI applications</li>
-                        <li>Awarded Academic Advancement Grant among 51 winners from 32 countries</li>
-                    </p>
-                    <div class="project-links" style="margin-top: 1rem;">
-                        <a href="#" class="mini-project-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">Google Professional Project Management Course</h3>
                     <p class="experience-organization">Google</p>
-                    <p class="experience-location">Istanbul, Turkey · Remote</p>
                     <p class="experience-date">2024</p>
                     <p class="experience-description">
-                        <li>Completed a 6-month project management program (10 hrs/week) covering six courses</li>
-                        <li>Gained skills in designing, planning, and executing traditional and agile projects</li>
+                        Completed 6-month program (10 hrs/week) covering traditional and agile project management.
                     </p>
-                    <div class="project-links" style="margin-top: 1rem;">
-                        <a href="#" class="mini-project-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="experience-title">Yetkin Gencler Program Graduate</h3>
-                    <p class="experience-organization">Yetkin Gencler</p>
-                    <p class="experience-location">Istanbul, Turkey · Remote</p>
-                    <p class="experience-date">2022</p>
-                    <p class="experience-description">
-                        <li>Completed a 12-week, 88-hour program focused on 21st-century competencies</li>
-                        <li>Strengthened critical thinking, problem-solving, teamwork, and presentation skills through project-based learning</li>
-                        <li>Covered sustainability and entrepreneurship through workshops</li>
-                    </p>
-                    <div class="project-links" style="margin-top: 1rem;">
-                        <a href="#" class="mini-project-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">IEEE Computer Society Core Team Member</h3>
                     <p class="experience-organization">Dogus University</p>
-                    <p class="experience-location">Istanbul, Turkey · On-Site</p>
                     <p class="experience-date">2021-2023</p>
                     <p class="experience-description">
-                        <li>Took active leadership roles in event planning, moderation, and content creation</li>
-                        <li>Organized 20+ technical events, developing strong project management, communication, and team coordination skills</li>
+                        Organized 20+ technical events, developing project management and communication skills.
                     </p>
-                    <div class="project-links" style="margin-top: 1rem;">
-                        <a href="#" class="mini-project-link" target="_blank">
-                            <i class="fas fa-briefcase"></i> View Work
-                        </a>
-                    </div>
+                </div>
                 </div>
             </div>
+            </div>
         </section>
+
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta" id="stickyCTA">
+        <a href="#contact" class="sticky-cta-button">
+            <i class="fas fa-paper-plane"></i>
+            <span>Let's Talk</span>
+        </a>
+    </div>
 
  <!-- Footer -->
  <footer class="footer" id="contact">
     <div class="footer-content">
         <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Let's Connect!</h3>
-            <p style="color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: 1.5rem; font-size: 0.95rem;">
-                Ready to collaborate on AI projects? Let's discuss innovative solutions.
+            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.8rem; font-weight: 600;">Let's Build Something</h3>
+            <p style="color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 2rem; font-size: 1rem;">
+                Ready to discuss your computer vision project? Let's connect.
             </p>
             
             <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
@@ -2086,10 +2182,9 @@
             </div>
         </div>
         
-        <div class="footer-divider" style="margin: 1rem auto;"></div>
-        <p class="footer-bottom" style="font-size: 0.85rem;">
-            © All rights reserved - Cemre Dag 2025 | Crafted 
-            with love and curiosity
+        <div class="footer-divider" style="margin: 1.5rem auto;"></div>
+        <p class="footer-bottom" style="font-size: 0.9rem;">
+            © 2025 Cemre Dag. Crafted with precision and purpose.
         </p>
     </div>
 </footer>
@@ -2332,6 +2427,42 @@
             // Add analytics tracking here if needed
         });
     });
+
+    // Collapsible sections toggle
+    function toggleCollapse(id) {
+        const content = document.getElementById(id);
+        const button = event.currentTarget;
+        const icon = button.querySelector('i');
+        const text = button.querySelector('span');
+        
+        content.classList.toggle('active');
+        button.classList.toggle('active');
+        
+        if (content.classList.contains('active')) {
+            text.textContent = text.textContent.replace('Show', 'Show Less');
+        } else {
+            text.textContent = text.textContent.replace('Show Less', 'Show');
+        }
+    }
+
+    // Sticky CTA Button visibility
+    const stickyCTA = document.getElementById('stickyCTA');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const heroHeight = document.querySelector('.hero').offsetHeight;
+        
+        // Show sticky CTA after scrolling past hero section
+        if (scrollTop > heroHeight) {
+            stickyCTA.classList.add('visible');
+        } else {
+            stickyCTA.classList.remove('visible');
+        }
+        
+        lastScrollTop = scrollTop;
+    }, { passive: true });
 </script>
 </body>
 </html>
+
