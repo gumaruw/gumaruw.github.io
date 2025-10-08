@@ -1,4 +1,4 @@
-title: "Cemre Dag | ML Engineer & Computer Vision Specialist"
+title: "Cemre Dag | ML Engineer"
 description: "A solution-oriented engineer specializing in machine learning, signal processing, and image processing. Passionate about delivering tangible value through innovative AI solutions."
 author: "Cemre Dag"
 email: "cemred.istanbul@gmail.com"
@@ -29,7 +29,7 @@ incremental: false
 
 # Custom portfolio settings
 portfolio:
-  resume_url: "#resume"
+  resume_url: "Cemre_Dag_Resume.pdf"
   current_year: 2025
 
 # Exclude files
