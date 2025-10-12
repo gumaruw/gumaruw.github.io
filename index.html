@@ -407,7 +407,7 @@
         }
 
         .hero-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
             color: #ffffff;
@@ -415,6 +415,7 @@
             max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
+            transition: font-size 0.3s ease;
         }
 
         @keyframes gradientShift {
@@ -423,14 +424,15 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
             font-weight: 500;
             margin-bottom: 2.5rem;
             opacity: 0.9;
-            line-height: 1.7;
+            line-height: 1.6;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            transition: font-size 0.3s ease;
         }
 
         .hero-description {
@@ -970,12 +972,12 @@
         }
 
         .why-work-item {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(10, 36, 99, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(10, 36, 99, 0.12);
+            border: 2px solid rgba(72, 199, 141, 0.2);
             text-align: center;
             transition: all 0.3s ease;
             position: relative;
@@ -997,8 +999,9 @@
 
 
         .why-work-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(10, 36, 99, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(10, 36, 99, 0.18);
+            border-color: rgba(72, 199, 141, 0.4);
         }
 
         .why-work-item:hover::before {
@@ -1262,13 +1265,7 @@
                 padding: 0 2rem;
             }
             
-            .hero-content h1 {
-                font-size: 3.5rem;
-                line-height: 1.1;
-            }
-            
             .hero-content p {
-                font-size: 1.3rem;
                 max-width: 600px;
             }
             
@@ -1289,9 +1286,6 @@
                 padding: 0 1.5rem;
             }
             
-            .hero-content h1 {
-                font-size: 3rem;
-            }
             
             .project-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1308,13 +1302,6 @@
                 padding-top: 90px;
             }
             
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
             
             .project-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1336,13 +1323,6 @@
         }
 
         @media (min-width: 600px) and (max-width: 767px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
             
             .project-grid {
                 grid-template-columns: 1fr;
@@ -1364,13 +1344,6 @@
         }
 
         @media (min-width: 480px) and (max-width: 599px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-content p {
-                font-size: 0.9rem;
-            }
             
             .section-title {
                 font-size: 1.8rem;
@@ -1398,14 +1371,6 @@
                 padding: 0 0.8rem;
             }
             
-            .hero-content h1 {
-                font-size: 1.6rem;
-                line-height: 1.2;
-            }
-            
-            .hero-content p {
-                font-size: 0.85rem;
-            }
             
             .section-title {
                 font-size: 1.6rem;
@@ -1442,13 +1407,6 @@
                 padding: 0 0.6rem;
             }
             
-            .hero-content h1 {
-                font-size: 1.4rem;
-            }
-            
-            .hero-content p {
-                font-size: 0.8rem;
-            }
             
             .section-title {
                 font-size: 1.4rem;
@@ -1509,6 +1467,17 @@
 
         #skills .section {
             background: #fafbfc;
+            min-height: 500px;
+            padding: 3rem 2rem;
+        }
+        
+        #why-me .section {
+            min-height: 400px;
+            padding: 3rem 2rem;
+        }
+        
+        #other-experience .section {
+            padding: 2rem 2rem;
         }
 
         .skill-category:nth-child(1)::before {
@@ -1640,12 +1609,12 @@
         /* Community Experience Cards - Compact Layout */
         #other-experience .experience-item {
             position: relative;
-            padding: 1rem 1.2rem; /* Reduced padding */
-            margin-bottom: 0.8rem;
+            padding: 0.8rem 1rem; /* More compact padding */
+            margin-bottom: 0.6rem; /* Reduced margin */
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 0.8rem; /* Reduced gap */
         }
         
         #other-experience .experience-content {
@@ -1661,8 +1630,8 @@
         /* Tablet adjustments */
         @media (max-width: 1024px) and (min-width: 769px) {
             #other-experience .experience-item {
-                padding: 1rem 1rem;
-                gap: 0.4rem;
+                padding: 0.7rem 0.8rem;
+                gap: 0.6rem;
             }
         }
 
@@ -1705,10 +1674,10 @@
         /* Community Experience Mobile Adjustments */
         @media (max-width: 768px) {
             #other-experience .experience-item {
-                padding: 0.8rem 1rem;
-                margin-bottom: 0.6rem;
+                padding: 0.6rem 0.8rem;
+                margin-bottom: 0.5rem;
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.4rem;
             }
             
             #other-experience .experience-item .certificate-button {
@@ -1725,8 +1694,8 @@
         /* Extra small mobile adjustments */
         @media (max-width: 480px) {
             #other-experience .experience-item {
-                padding: 0.7rem 0.8rem;
-                gap: 0.4rem;
+                padding: 0.5rem 0.6rem;
+                gap: 0.3rem;
             }
             
             #other-experience .experience-item .certificate-button .mini-project-link {
@@ -1986,10 +1955,7 @@
             position: relative;
         }
 
-        /* Hero resume button - no animation */
-        .hero .resume-button {
-            /* Animation removed for better UX */
-        }
+        /* Hero resume button - no animation (removed for better UX) */
 
 
         @keyframes buttonPulse {
@@ -2639,10 +2605,7 @@
             }
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        /* Smooth scrolling handled by JavaScript for better control */
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -3023,10 +2986,9 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">I Build ML Systems That<br><span style="color: #FF6B6B;">Actually Ship</span></h1>
+            <h1 class="hero-title">I Build ML Systems That<br><span style="color: #FF6B6B;">Solve Real Problems</span></h1>
             <p class="hero-subtitle">
-                From research papers to production deployments — 
-<span style="color: #FF6B6B;">handling the full pipeline</span> so your models don't collect dust.
+                From messy data to deployed models — I focus on shipping solutions that <span style="color: #FF6B6B;">create business value,</span> not just metrics.
             </p>
             
             
@@ -3462,21 +3424,28 @@
                 <h2 class="section-title">Why Me?</h2>
                 <div class="why-work-grid">
                     <div class="why-work-item">
-                        <h3><i class="fas fa-rocket why-work-icon"></i>Ships to Production</h3>
-                        <p>Production-ready ML systems that actually work.</p>
+                        <h3><i class="fas fa-ship why-work-icon"></i>I Ship, Not Just Code</h3>
+                        <p>No half-baked notebooks. My projects go from Jupyter to deployment — because shipping matters more than perfect accuracy.</p>
                     </div>
                     <div class="why-work-item">
-                        <h3><i class="fas fa-bolt why-work-icon"></i>Fast Turnaround</h3>
-                        <p>Rapid iteration cycles for quick deployment.</p>
+                        <h3><i class="fas fa-comments why-work-icon"></i>I Speak Human</h3>
+                        <p>Stakeholder asks "why this model?" — I answer in plain English, not equations. Clear communication = faster decisions.</p>
                     </div>
                     <div class="why-work-item">
-                        <h3><i class="fas fa-cogs why-work-icon"></i>Full-Stack ML Pipeline</h3>
-                        <p>End-to-end from data to deployment.</p>
+                        <h3><i class="fas fa-brain why-work-icon"></i>I Learn Fast, Break Less</h3>
+                        <p>New framework? New stack? I dive in, document everything, and don't need hand-holding after week one.</p>
                     </div>
                     <div class="why-work-item">
-                        <h3><i class="fas fa-globe why-work-icon"></i>Remote-Ready</h3>
-                        <p>Seamless collaboration across time zones.</p>
+                        <h3><i class="fas fa-laptop-code why-work-icon"></i>Remote-Native</h3>
+                        <p>Git, Slack, async updates, proper documentation — I know the remote playbook. No learning curve on collaboration tools.</p>
                     </div>
+                </div>
+                <div style="text-align: center; margin-top: 2.5rem; padding: 1.5rem; background: rgba(10, 36, 99, 0.05); border-radius: 16px; box-shadow: 0 4px 16px rgba(10, 36, 99, 0.08);">
+                    <p style="font-size: 1.3rem; color: #0A2463; font-weight: 700; margin: 0; line-height: 1.4;">
+                        <i class="fas fa-quote-left" style="color: #48C78D; margin-right: 0.6rem; font-size: 1.1rem;"></i>
+                        Less talk, more deploy. I turn ML ideas into working systems.
+                        <i class="fas fa-quote-right" style="color: #48C78D; margin-left: 0.6rem; font-size: 1.1rem;"></i>
+                    </p>
                 </div>
             </div>
         </section>
@@ -3662,174 +3631,72 @@ ML systems that matter, let's connect.
         });
     }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // SIMPLE NAVIGATION SYSTEM - NO COMPLEX LOGIC
+    
+    // 1. Simple smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            
             if (target) {
-                const offsetTop = target.offsetTop - 60; // Account for navbar height
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
+                target.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
-
-    // Active navigation highlighting with throttling for better performance
-    const sections = document.querySelectorAll('section[id]');
-    const footer = document.querySelector('footer[id="contact"]');
-    let navScrollTimeout;
-
+    
+    // 2. Simple navigation highlighting
     function updateActiveNav() {
-        const navbar = document.querySelector('.navbar');
-        const hero = document.querySelector('.hero');
-        
-        // Add scrolled class when past hero section
-        if (window.scrollY > hero.offsetHeight * 0.3) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        let current = '';
-        const scrollPosition = window.scrollY;
+        const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
         const documentHeight = document.documentElement.scrollHeight;
+        const sections = document.querySelectorAll('section[id], footer[id]');
         
-        // Check if we're near the bottom of the page (contact section)
-        if (scrollPosition + windowHeight >= documentHeight - 150) {
-            current = 'contact';
+        // Find current section
+        let currentSection = '';
+        
+        // Special case: if we're near the bottom of the page, show contact
+        if (scrollY + windowHeight >= documentHeight - 50) {
+            currentSection = 'contact';
         } else {
-            // Optimized section detection with dynamic thresholds
-            let activeSection = '';
-            let fallbackSection = '';
-            let minDistance = Infinity;
-            
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop - 60; // Reduced offset for better timing
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                // Enhanced detection for shorter sections (like Why Me?)
-                const isShortSection = sectionHeight < 400;
-                const isVeryShortSection = sectionHeight < 200;
-                const threshold = isVeryShortSection ? 300 : (isShortSection ? Math.min(sectionHeight * 1.2, 200) : Math.min(sectionHeight * 0.3, 150));
-                
-                // If we're within the section bounds with enhanced threshold
-                if (scrollY >= sectionTop && scrollY <= sectionBottom + threshold) {
-                    activeSection = sectionId;
-                }
-                
-                // Calculate distance for fallback (enhanced for short sections)
-                const distance = Math.abs(scrollY - sectionTop);
-                const weightedDistance = distance * (isVeryShortSection ? 0.05 : (isShortSection ? 0.2 : 1)); // Favor very short sections extremely
-                
-                if (weightedDistance < minDistance) {
-                    minDistance = weightedDistance;
-                    fallbackSection = sectionId;
+            // Normal section detection
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
                 }
             });
-            
-            // Use active section if found, otherwise use fallback
-            current = activeSection || fallbackSection;
-            
-            // Special handling for Why Me section - very aggressive detection for short sections
-            const whyMeSection = document.getElementById('why-work-with-me');
-            if (whyMeSection) {
-                const whyMeTop = whyMeSection.offsetTop - 200;
-                const whyMeBottom = whyMeSection.offsetTop + whyMeSection.offsetHeight + 200;
-                
-                // Check if we're in the Why Me section range with extended buffer
-                if (scrollY >= whyMeTop && scrollY <= whyMeBottom) {
-                    current = 'why-work-with-me';
-                }
-                
-                // Additional check: if we're between Skills and Contact, prioritize Why Me
-                const skillsSection = document.getElementById('skills');
-                const contactSection = document.getElementById('contact');
-                if (skillsSection && contactSection) {
-                    const skillsBottom = skillsSection.offsetTop + skillsSection.offsetHeight;
-                    const contactTop = contactSection.offsetTop;
-                    
-                    // Extended range for Why Me section detection
-                    if (scrollY > skillsBottom - 150 && scrollY < contactTop - 150) {
-                        current = 'why-work-with-me';
-                    }
-                }
-                
-                // Extra aggressive detection for computer screens
-                const windowHeight = window.innerHeight;
-                if (windowHeight > 800) { // Computer screen detection
-                    const whyMeCenter = whyMeSection.offsetTop + (whyMeSection.offsetHeight / 2);
-                    const distanceFromCenter = Math.abs(scrollY + (windowHeight / 2) - whyMeCenter);
-                    
-                    // If we're within 300px of the Why Me section center, highlight it
-                    if (distanceFromCenter < 300) {
-                        current = 'why-work-with-me';
-                    }
-                }
-            }
-            
-            // Special handling for very short sections
-            if (!current) {
-                // Check if we're between sections and assign the next one
-                for (let i = 0; i < sections.length - 1; i++) {
-                    const currentSection = sections[i];
-                    const nextSection = sections[i + 1];
-                    const currentBottom = currentSection.offsetTop + currentSection.offsetHeight;
-                    const nextTop = nextSection.offsetTop;
-                    
-                    if (scrollY > currentBottom && scrollY < nextTop) {
-                        // We're between sections, use the next one
-                        current = nextSection.getAttribute('id');
-                        break;
-                    }
-                }
-            }
-            
-            // Final fallback
-            if (!current) {
-                current = 'hero';
-            }
         }
-
-        navLinks.forEach(link => {
+        
+        // Update nav links
+        document.querySelectorAll('.nav-item a').forEach(link => {
             link.classList.remove('active');
-            const linkHref = link.getAttribute('href');
+            const href = link.getAttribute('href');
             
-            // Special case: Experience button should be active for both Experience and Community sections
-            if (linkHref === '#experience' && (current === 'experience' || current === 'other-experience')) {
+            if (href === '#' + currentSection) {
                 link.classList.add('active');
-            } else if (linkHref === `#${current}`) {
+            }
+            // Experience special case
+            if (href === '#experience' && (currentSection === 'experience' || currentSection === 'other-experience')) {
                 link.classList.add('active');
             }
         });
         
-        // Debug: Log current section for troubleshooting
-        if (current === 'why-work-with-me') {
-            console.log('Why Me section detected as active');
+        // Navbar scrolled class
+        const navbar = document.querySelector('.navbar');
+        if (scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
     }
 
-    // Optimized scroll handler with requestAnimationFrame
-    let scrollAnimationFrame;
-    let lastScrollTime = 0;
-    
-    function handleScroll() {
-        const now = Date.now();
-        if (now - lastScrollTime >= 16) { // Throttle to 60fps
-            if (scrollAnimationFrame) {
-                cancelAnimationFrame(scrollAnimationFrame);
-            }
-            scrollAnimationFrame = requestAnimationFrame(updateActiveNav);
-            lastScrollTime = now;
-        }
-    }
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Simple scroll handler
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
 
     // Lazy loading for images and elements
     const lazyElements = document.querySelectorAll('[data-lazy]');
