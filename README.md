@@ -33,7 +33,6 @@ Visit my portfolio at: [gumaruw.github.io](https://gumaruw.github.io)
 
 - **Email**: cemred.istanbul@gmail.com
 - **LinkedIn**: [linkedin.com/in/cemred](https://linkedin.com/in/cemred)
-- **GitHub**: [github.com/gumaruw](https://github.com/gumaruw)
 - **Kaggle**: [kaggle.com/gumaruw](https://kaggle.com/gumaruw)
 
 Feel free to reach out for collaborations or opportunities!
