@@ -20,12 +20,6 @@ Visit my portfolio at: [gumaruw.github.io](https://gumaruw.github.io)
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Design**: Modern, responsive design with interactive elements and smooth transitions
 
-## Features
-
-- **Responsive Design**: Seamless experience across all devices
-- **Interactive Portfolio**: Smooth animations, hover effects, and particle system
-- **Accessibility**: Semantic HTML, ARIA labels, reduced motion support
-
 ## Contact
 
 - **Email**: cemred.istanbul@gmail.com
