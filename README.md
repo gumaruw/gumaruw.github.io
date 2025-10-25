@@ -18,16 +18,16 @@ Visit my portfolio at: [gumaruw.github.io](https://gumaruw.github.io)
 ## Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Styling**: CSS Grid, Flexbox, Advanced CSS Animations
-- **Deployment**: GitHub Pages
-- **Design**: Modern, responsive design with interactive elements
+- **Design**: Modern, responsive design with interactive elements and smooth transitions
 
 ## Features
 
 - **Responsive Design**: Seamless experience across all devices
-- **Interactive Portfolio**: Smooth animations and hover effects
-- **Performance Optimized**: Fast loading and smooth user experience
-- **Accessibility**: Semantic HTML and proper contrast ratios
+- **Interactive Portfolio**: Smooth animations, hover effects, and particle system
+- **Performance Optimized**: Intersection Observer API, lazy loading, CSS containment
+- **Advanced Animations**: Custom CSS keyframes, fadeInUp effects, particle system
+- **Modern UI/UX**: CSS Grid/Flexbox layouts, masonry grid, floating CTA button
+- **Accessibility**: Semantic HTML, ARIA labels, reduced motion support
 
 ## Contact
 
