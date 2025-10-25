@@ -24,9 +24,6 @@ Visit my portfolio at: [gumaruw.github.io](https://gumaruw.github.io)
 
 - **Responsive Design**: Seamless experience across all devices
 - **Interactive Portfolio**: Smooth animations, hover effects, and particle system
-- **Performance Optimized**: Intersection Observer API, lazy loading, CSS containment
-- **Advanced Animations**: Custom CSS keyframes, fadeInUp effects, particle system
-- **Modern UI/UX**: CSS Grid/Flexbox layouts, masonry grid, floating CTA button
 - **Accessibility**: Semantic HTML, ARIA labels, reduced motion support
 
 ## Contact
